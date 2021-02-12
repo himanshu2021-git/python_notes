@@ -1,0 +1,5464 @@
+CODING CONVENTION
+KEYWORDS
+IDENTIFIERS
+VARIABLES
+DATA TYPES
+TYPE CASTING
+NUMBER CONVERSION
+OPERATORS
+STRING HANDLING
+FLOW OF CONTROL
+DATA STRUTURES - MANAGAEMENT SYSTEM
+FUNCTIONAL PROGRAMMING
+MODULE PROGRAMMING
+MINOR PROJECT
+OBJECT ORIENTED PROGRAMMING
+EXCEPTION HANDLING
+FILE HANDLING
+DATA BASE CONNECTIVITY
+MULTI-PROCESSING
+GRAPHICAL USER INTERFACE
+MAJOR PROJECT
+
+CODE CONVENTION.
+-----------------
+
+THE FORMAT IN WHICH YOU SHOULD WRITE YOUR CODE.
+
+variable		--		variable_name
+constant variable	--		VARIABLE_NAME
+module			--		modulename
+package			--		packagename
+function		--		functionname()
+classes			--		ClassName
+method			--		methodName()
+
+comments
+---------
+the code written inside some python module which is never going to get executed.
+
+# single line comment 
+
+print("HELLO WORLD") # this statement will show hello world onto the screen
+
+"""
+this is also a comment
+but it has mulitple lines
+"""
+
+'''
+THIS IS ALSO A COMMENT
+HAVING MORE THAN ONE LINE
+'''
+
+INDENTATION
+------------
+if a python object has a body then that body will be detemined using the indentation.
+
+block:
+	print('HELLO WORLD')
+	print('HELLO WORLD') # these 3 statements belongs to block
+	print('HELLO WORLD')
+print('HELLO WORLD')
+print('HELLO WORLD')
+
+KEYWORDS
+-----------
+these are predefined words which you can use only you will never be able to alter them.
+
+these are total 35 in count.
+
+code to list all the keywords
+
+>>> from keyword import kwlist
+>>> kwlist
+['False', 'None', 'True', 'and', 'as', 'assert', 'async', 'await', 'break', 'class', 'continue', 'def', 'del', 'elif', 'else', 'except', 'finally', 'for', 'from', 'global', 'if', 'import', 'in', 'is', 'lambda', 'nonlocal', 'not', 'or', 'pass', 'raise', 'return', 'try', 'while', 'with', 'yield']
+
+>>> len(kwlist)
+35
+
+True - Yes
+False - No
+None - Nothing
+
+IDENTIFIERS
+------------
+these are just names for the python objects which can be used to reference them.
+
+-rules to define identifiers
+
+1- it can never be a keyword
+	
+	True = 10 # invalid
+	true = 10 # valid
+
+2- it can never start with a number
+	
+	1num = 10 # invalid
+	num1 = 10 # valid
+
+3- it can not contain any special symbol or hidden symbol
+	
+	num 1 = 10 # invalid because space.
+	num^y = 10 # invalid ^
+
+4- only a single special symbol is allowed _ underscore it plays a very major role in python.
+	
+	num_1 = 10 # valid
+	_num_1 = 10 # valid secure
+	__num_1 = 10 # valid highly secure
+
+5- identifiers are case sensitive
+	
+	num = 10
+	Num = 20
+	NUM = 30
+		# all are valid and diff. from each other.
+
+recommendation.
+6- keep identifiers as small as much you can but make sure it won't lost the understandablity.
+
+	number_1 = 10 # valid but not recommended
+	num_1 = 10 # valid and recommended
+
+__1__ = 10	# valid
+_1234 = 10	# valid
+_ 10 = 20	# invalid
+_ = 50		# valid
+abc123& = 48	# invalid
+__^__ = 78	# invalid
+12_ = 78	# invalid
+
+
+
+DISK OPERATING SYSTEM
+---------------------
+
+basic commands of dos.
+-----------------------
+
+-dir - directories
+	list all the files and folders available at current or given location.
+
+
+E:\>dir
+	
+you will get your result here.
+
+E:\>dir D:\folder
+
+you will get your result here.
+
+-tree
+	shows the structure of folder and file.
+
+E:\>tree
+	shows the structure only for folder at current working directory
+	
+E:\>tree location
+	shows the structure for mentioned location only for folders
+
+E:\>tree /f
+	shows the structure of files and folder at current working directory | current location
+	
+E:\>tree /f location
+	shows the structure of files and folder at given location
+
+-drive name:enter
+	this command is used to switch the drive
+
+E:\>f:
+
+F:\>
+
+-color change
+	this command will show you all the posible color available to be used as foreground and 		background
+
+-color foreground-hexa background-hexa
+
+F:\>color fc
+
+F:\>color f1
+
+F:\>color 0f
+
+-help
+	shows the complete detailed list of all the available commands for the dos.
+
+-cls
+	clears the screen
+
+E:\>cls
+
+DIRECTORY RELATED COMMANDS
+--------------------------
+md | mkdir - make directory
+	creates the directory at given location.
+
+F:\>md krishna.py
+
+F:\>md E:\harekrishna
+
+F:\>md x y z
+
+F:\>md "x y z"
+
+
+rd | rmdir - remove directory
+	deletes the given directories - must be empty
+
+F:\>rd krishna.py
+
+F:\>md x\krishna
+
+F:\>rd x
+The directory is not empty.
+
+F:\>rd /s x
+x, Are you sure (Y/N)? y
+
+-ren - rename
+	changes the name of any file or folder
+	
+	old	new
+F:\>ren krishna krishna1234
+
+-cd | chdir - change directory
+	it is used to open a folder.
+	
+F:\>cd krishna1234
+
+F:\krishna1234>
+
+F:\>cd project\demo\demoapp\migrations
+
+F:\project\demo\demoapp\migrations>
+
+-cd..	-	close directory
+	shuts the single folder
+
+F:\krishna1234>cd..
+
+F:\>
+
+F:\project\demo\demoapp\migrations>cd..
+
+F:\project\demo\demoapp>cd\
+
+F:\>
+
+
+files commands of dos
+-------------------------
+-copy con
+	this command is used to create the file of any type.
+
+F:\>copy con mypythonfile.py
+# this will be the code written inside that file
+# no dos command will work over here.
+md
+cd
+cd..
+cd\
+# to save this file ctrl + z
+^Z
+        1 file(s) copied.
+
+F:\>
+
+-type
+	this command is used to open a file.
+
+F:\>type mypythonfile.py
+# this will be the code written inside that file
+# no dos command will work over here.
+md
+cd
+cd..
+cd\
+# to save this file ctrl + z
+
+-del
+	this command is used to delete a file.
+
+F:\>del mypythonfile.py
+
+
+-copy source destination
+	this command is used to copy a single file some other location
+
+E:\pendrive>copy F:\output.mp4 .
+
+. ==> indicates the current working directory
+
+-xcopy source destination
+	copies more than file at a time.
+
+E:\pendrive\newfile>xcopy F:\mattut .
+F:\mattut\customizing matplotlib.ipynb
+F:\mattut\piechart.png
+F:\mattut\Plotting covid 19 spread.ipynb
+F:\mattut\subplots_demo.ipynb
+4 File(s) copied
+
+-exit
+	this command will shut the dos
+
+
+---------------------------------------------------------------------------
+VARIABLES
+-------------
+
+variables is a booked place in computer memory to hold some value.
+
+1-REFERENCE VARIABLES
+	these variables are created when they are required.
+	a place will be booked inside the computer memory and the python object(variable) will point 		to that location.
+	
+i-local
+	these variables are created inside some block and has scope only within that block.
+	they can never be accessed from outside of their creation block.
+
+ii-global
+	these variables are directly created inside the program outside of any block and can be 		accessed from everywhere.
+
+-garbage
+	a nameless object in computer memory.
+
+-garbage collector
+	a functionality to remove all the garbage from memory for flowfull execution of python 		program.
+
+2-PRIMITIVE VARIABLES - PYTHON DOES NOT HAVE THESE VARIABLES.
+	these variables are prely-created by the language compiler or interpretor and this is the 		reason you can find the size occupied by them.
+	
+	since in python things are created whenever they are required so you can not find the size 		going to be occupied by the variable before its creation.
+
+-UNITS OF DATA MEASUREMENT.
+
+8 bits - Byte
+1024 - Byte - 1 KB
+1024 - KB - 1 MB
+1024 - MB - 1 GB
+1024 - GB - TB
+
+a = 10 # global variable
+
+#creating a block
+def block():
+	a = 100 # local variable
+	print(a)
+
+
+#executing the block
+block()
+
+def block1():
+	print(a)
+
+block1()
+
+print(a)
+
+output
+---------
+E:\python 4 pm>python demo.py
+100
+10
+10
+
+
+---------------------------
+a = 10 # global variable
+
+#creating a block
+def block():
+	a = 100 # local variable
+	print(a)
+
+#executing the block
+block()
+
+def block1():
+	global a # you are telling python that you don't wanna make any new variable 
+	a = 7800 # another local variable
+	print(a)
+
+block1()
+print(a)
+
+output 
+----------
+
+
+E:\python 4 pm>python demo.py
+100
+7800
+7800
+------------------------------
+
+NONLOCAL
+
+a = 100
+#created a block
+def block():
+	a = 1000
+	# created a inner block
+	def innerblock():
+		nonlocal a
+		a = 10000
+		print(a)
+	print(a)
+	# executed the inner block
+	innerblock()
+	print(a)
+print(a)
+#executing a block
+block()
+---------------------------------------------------
+E:\python 4 pm>python demo.py
+100
+1000
+10000
+10000
+-------------------------------------------
+global keyword
+	this keyword is used to make changes into a global variable from inside of a block	
+	
+nonlocal
+	this keyword is used to make changes into a local variable from inside of some inner block.
+-----------------------------------------------------------------------------------------------------
+INPUT AND OUTPUT | I/O
+----------------------------
+the major need of any application is to communicate with the user
+io helps the application to communicate with the user by allowing user to given value to it and by providing the values to user the application also communicates with the user.
+
+
+print(value1,value2,...,sep=" ",end="\n")
+	takes infinite values from you and print them onto the console seperating them with the given 		seperator and at the end of print statement end value will be placed as full stop.
+
+print(4,5,8,"krishna",'hare krishna',sep="|",end=".")
+ 
+E:\python 4 pm>python demo.py
+4 5 8 krishna hare krishna
+
+E:\python 4 pm>python demo.py
+4.5.8.krishna.hare krishna
+
+E:\python 4 pm>python demo.py
+4|5|8|krishna|hare krishna.
+E:\python 4 pm>
+
+ESCAPE SEQUENCES
+-----------------
+these are just special chars which represents the special symbol.
+
+\n	-	linebreak
+\t	-	tabspace
+\\	-	print backslash
+\'	-	print single quote
+\"	-	print double quote
+
+
+input("single optional msg")
+	prints the optional msg onto the console then allow the user to enter some value then takes 		that value from user and return that back into the code where ever that input function was 		written.
+	all the value had by the input function will be only in form of string | words.
+
+a = input("ENTER A NUMBER PLEASE : ")
+print(a)
+
+
+DATA TYPES
+--------------
+the types which are used categorize the data that you are going to deal with.
+data type helps you to find the set of operations allowed on data.
+you are never allowed to set the type of data.
+
+type(object)
+	it tells you to type of given object.
+
+>>> a = 1
+>>> type(a)
+<class 'int'>
+>>>
+
+
+int
+	in python every non decimal number will be considered as only integer.	
+
+>>> a = 1
+>>> type(a)
+<class 'int'>
+>>>
+
+>>> a = 12345645641654165415641654165416516516516519819681968516158614654658196851498516
+>>> type(a)
+<class 'int'>
+>>>
+
+float
+	every number which contains at least one decimal place then that number will be considered as 		float only.
+
+>>> a = 1.1
+>>> type(a)
+<class 'float'>
+>>>
+
+>>> a = 1.5216548564968541961496841968541984968489641964198498419849849846984
+>>> type(a)
+<class 'float'>
+>>>
+
+complex
+	this data type is only availale in python.
+	with the help of complex data type you can store a number with imaginary part as well.
+	very rearly used data type.
+	
+>>> a = 10+50j # you can use upper case j also.
+>>> type(a)
+<class 'complex'>
+>>>
+
+bool
+	can contain only True or False.
+
+>>> a = True
+>>> type(a)
+<class 'bool'>
+>>> a = False
+>>> type(a)
+<class 'bool'>
+>>>
+	
+str
+	string is nothing but the word of programming.
+
+	anything surrounded with '' or "" or """ """ or ''' ''' will be considered as string only.
+	
+>>> a = "krishna"
+>>> type(a)
+<class 'str'>
+>>> a = 'krishna'
+>>> type(a)
+<class 'str'>
+>>> a = """
+... this is also
+... a string
+... """
+>>> type(a)
+<class 'str'>
+>>> a = '''
+... this is also
+... a string
+... '''
+>>> type(a)
+<class 'str'>
+>>> type("HELLO WORLD") # anonymous string
+<class 'str'>
+>>>
+
+
+-various number system
+	in python you will never be able to start a number with zero but if you are required to 		store only 0 then that is allowed.
+	
+	0 at begining of any number indicates some other number system is going to be used.
+
+
+1-binary number system - base 2
+	this is the number system which is getting used by all the machines.
+	
+	allowed digits - 0 and 1
+		
+	it represents binary system - 0B | 0b
+	
+>>> a = 0b010101010101010
+>>> a
+10922
+>>>
+
+2-octal number system - base 8
+	allowed digits 0 to 7
+	
+	0o | 0O
+
+>>> a = 0o123456
+>>> a
+42798
+
+3-hexadecimal number system - base 16
+
+	allowed digits 0 to 9 and a to f
+	
+	0x | 0X
+
+>>> a = 0x123458679abcdef
+>>> a
+81985662092037615
+
+4- integer number system base - 10
+	
+	allowed digits - 0 to 9
+	
+	no representation is required
+
+>>> a = 123
+>>> a
+123
+
+anonymous object
+	an object which does not have any identifier assigned to it.
+
+x = '12345'	-	str
+x = 4.45	-	float
+x = "4.85"	-	str
+x = "True"	-	str
+x = False	-	bool
+x = 0b10101010	-	int
+x = "0xabcd"	-	str
+
+q- write a program which will accept the name of student and marks of 5 subjects
+	OUTPUT
+	--------
+	NAME	:	USER WILL ENTER
+	---------------MARKS----------------
+	HINDI	:	USER WILL ENTER
+	ENGLISH	:	"
+	MATH	:	"
+	SCIENCE	:	"
+	HISTORY	:	"
+	
+	------------REPORT CARD-------------
+	************NAME*********************
+	HINDI	:	VALUE
+	MATH	:	VALUE
+	SCIENCE	:	VALUE
+	ENGLISH	:	VALUE
+	HISTORY	:	VALUE
+
+TYPE CASTING
+-------------
+type casting is the process of converting one data type some other data type
+
+python is dynamically typed language so in python we can never decide for a variable the fixed type of value the python is going to determine the type with the help of value assigned to a variable.
+
+x - this will contain only integer number X
+
+# simple program to have two number from and and print their sum
+
+x = input("ENTER A NUMBER : ") # '75'
+y = input("ENTER A NUMBER : ") # '45'
+
+print(x+y)
+
+in this above code python will consider the values returned by inpu function as string only even if they are number.
+
+python has a set of functions available to perform the type casting.
+
+1-int(object)
+	this function type casts all the object to integer except non numeric string "krishna132" X
+	where "123456789" this string is totally valid.
+	complex number is also not allowed.
+
+>>> x = input('ENTER A NUMBER : ')
+ENTER A NUMBER : 75
+>>> y = input("ENTER A NUMBER : ")
+ENTER A NUMBER : 45
+>>> type(x)
+<class 'str'>
+>>> type(y)
+<class 'str'>
+>>> x = int(x)
+>>> y = int(y)
+>>> type(x)
+<class 'int'>
+>>> type(y)
+<class 'int'>
+>>> print(x+y)
+120
+>>>
+ or
+
+# simple program to have two number from and and print their sum
+
+x = int(input("ENTER A NUMBER : ")) # '75'
+y = int(input("ENTER A NUMBER : ")) # '45'
+
+print(x+y)
+
+NOT ALLOWED TO BE TYPE CASTED.
+
+>>> x = "krishna" # NON NUMERIC STRING
+>>> int(x)
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+ValueError: invalid literal for int() with base 10: 'krishna'
+>>> x = 45+85j # COMPLEX IS ALSO NOT ALLOWED
+>>> int(x)
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+TypeError: can't convert complex to int
+>>>
+
+>>> int(45.854845648125465)
+45
+>>> int(True)
+1
+>>> int(False)
+0
+>>> int("45615")
+45615
+>>>
+
+
+
+
+
+float(object)
+	any data type to float it can type cast but not non numerical string and complex numbers.
+
+>>> float("12")
+12.0
+>>> float(True)
+1.0
+>>> float(False)
+0.0
+>>> float(int("0xabcd",base=16))
+43981.0
+>>>
+
+complex(object)
+	any data type to complex but not non numeric string (except if string is in complex format)
+
+>>> complex(1)
+(1+0j)
+>>> complex(True)
+(1+0j)
+>>> complex("4155")
+(4155+0j)
+>>> complex("415+45j")
+(415+45j)
+>>> complex("415+45x")
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+ValueError: complex() arg is a malformed string
+>>>
+
+
+bool(object)
+	any object to boolean it can type cast.
+
+0 and None - False
+other 	-  True
+
+>>> bool()
+False
+>>> bool(0)
+False
+>>> bool("")
+False
+>>> bool(None)
+False
+>>> bool("krishna")
+True
+>>> bool(54646)
+True
+>>> bool(54.4549684)
+True
+>>>
+
+str(object)
+	any object to string.
+	
+>>> str(45)
+'45'
+>>> str(45.45)
+'45.45'
+>>> str(45+85j)
+'(45+85j)'
+>>> str(True)
+'True'
+>>>
+
+Q- HAVE A NUMBER FROM USER AND PRINT THE CONVERTION INTO ALL NUMBER SYSTEM OF GIVEN NUMBER
+
+	ENTER A NUMBER : 10
+	binary	-
+	octal	-	
+	hexa	-	
+	 
+
+
+
+------------------------------------------
+
+
+
+# SIMPLE INTEREST CALC
+
+p = float(input('ENTER AMOUNT OF LOAN : '))
+r = float(input('RATE : '))
+t = float(input('ENTER PERIOD IN YEARS : '))
+
+# P*R*T/100
+
+#150000.0*'9'*'5'
+
+print('SIMPLE INTEREST IS : ',p*r*t/100)
+
+----------------------------------------------------------
+p = float(input('ENTER AMOUNT OF LOAN : '))
+r = float(input('RATE : '))
+t = float(input('ENTER PERIOD IN YEARS : '))
+si = p*r*t/100
+
+mi= (si+p)/(t*12)
+
+print(f"LOAN AMOUNT IS : {p:,}")
+print(f'INTEREST  IS : {si:,}')
+print(f'MONTHLY INSTALLMENT IS : {mi:,} FOR {t*12} MONTHS')
+----------------------------------------------------------------------
+NUMBER SYSTEM
+--------------
+python has wide range of number systems but natively python uses integer number system
+
+integer number system - base 10
+	allowed digits are 0-9
+	python defaultly follows this number system.
+	
+binary number system -  base 2
+	allowed digits are 0 and 1
+	
+	0b0101001110010
+	0B1100010010101
+
+>>> 0b101010101011111
+21855 # python will convert every number to integer automatically.
+
+>>> 0b1010101010121111
+  File "<stdin>", line 1
+    0b1010101010121111
+                 ^
+SyntaxError: invalid digit '2' in binary literal
+>>>
+
+octal number system - base 8
+	allowed digits  0-7
+	
+	0o12345607
+	0O123456
+
+>>> 0o12345670
+2739128  #  python will convert every number to integer automatically.
+>>> 0o123456708
+  File "<stdin>", line 1
+    0o123456708
+              ^
+SyntaxError: invalid digit '8' in octal literal
+>>>
+
+
+hexadecimal number system -  base 16
+	allowed digits 0-9 | a-f | A-F
+	
+	0xabcdef
+	0Xabcdef
+
+
+>>> 0x1234567890abcdef
+1311768467294899695
+>>> 0x1234567890abcdefg
+  File "<stdin>", line 1
+    0x1234567890abcdefg
+                      ^
+SyntaxError: invalid syntax
+>>>
+
+LITERALS
+	these are just values which we use in our code.
+
+-NUMBER LITERAL
+1-integer literal
+	123456789
+2-binary literal
+	0b101010101
+3-octal literal
+	0o1234567
+4-hexadecimal literal
+	0xabcdef123456789
+
+-FLOAT LITERAL
+	12.45496
+-COMPLEX LITERAL
+	45+85j
+-BOOLEAN LITERALS
+	True
+	False
+-STRING LITERALS
+	'KRISHNA'
+	"False"
+	"""True"""
+	'''True'''
+
+note:in python if you wish to store any other number system then integer number system then you can      only store it as string literal
+
+>>> a = 0b1010101010101010
+>>> a
+43690
+>>> a = '0b1010101010101010'
+>>> a
+'0b1010101010101010'
+>>>
+
+
+NUMBER CONVERSION.
+--------------------
+
+CONVERTING OTHER NUMBER SYSTEM TO INT. | NUMBER CONVERSION.
+
+int(number literal,base=10)
+
+BINARY TO INTEGER 
+
+>>> x = "123456789"
+>>> int(x)
+123456789
+>>> x = "0b101010"
+>>> int(x,base=2)
+42
+>>> int(0b101010)
+42
+>>> 0b101010
+42
+
+OCTAL TO INTEGER 
+
+>>> int("0o01234567",base=8)
+342391
+>>>
+
+HEXADECIMAL TO INTEGER
+
+>>> int("0xabcdef123456789",base = 16)
+773738363261118345
+
+bin(number)
+	converts any number system to binary number system.
+
+INTEGER TO BINARY
+
+>>> bin(42)
+'0b101010'
+>>>
+
+OCTAL TO BINARY -> OCTAL - INT - BINARY
+
+>>> bin(int("0o123456",base=8))
+'0b1010011100101110'
+>>>
+
+HEXA TO BINARY -> HEXA - INT - BINARY
+
+>>> bin(int("0xabcd",base=16))
+'0b1010101111001101'
+>>>
+
+oct(number)
+
+INT TO OCTAL
+
+>>> oct(45)
+'0o55'
+>>>
+
+BIN TO OCT -> BIN - INT - OCT
+
+>>> oct(int("0b1010",base=2))
+'0o12'
+>>>
+
+HEXA TO OCT -> HEXA - INT - OCT
+
+>>> oct(int("0xabcde",base=16))
+'0o2536336'
+
+hex(number)
+
+INT TO HEX
+
+>>> hex(42)
+'0x2a'
+
+OCT TO HEX -> OCT - INT - HEXA
+
+>>> hex(int("0o12345",base=8))
+'0x14e5'
+--------------------------------------------------------------------------------
+OPERATORS
+------------
+operators tell python that which action to perform with the given operands
+
+
+a = 10
+b = 20 
+
+operand		operand
+a	+	b
+	operator
+
+ARITHMETIC OPERATORS
+---------------------
+
++	-	ADDITION | CONCATENATION
+		
+		IF ALL OPERANDS ARE OF NUMBER TYPE THEN IT WILL ADD THEM.
+
+	>>> a = 10
+>>> b = 20
+>>> a + b
+30
+>>> a = 56.54
+>>> b = 7
+>>> a + b
+63.54
+		IF ALL OPERANDS ARE OF COLLECTION TYPE THEN IT GOING TO CONCATENATE THEM.
+
+		"HARE" + "KRISHNA" = ? "HAREKRISHNA"
+
+>>> a = "HARE"
+>>> b = "KRISHNA"
+>>> a+b
+'HAREKRISHNA'
+>>>
+
+		IF TYPES OF OPERANDS MIS-MATCHED THEN ERROR WILL RAISED.
+
+		45 + "HARE"
+>>> a = "HARE"
+>>> b = 45
+>>> a + b
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+TypeError: can only concatenate str (not "int") to str
+>>>
+
+>>> b + a
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+TypeError: unsupported operand type(s) for +: 'int' and 'str'
+>>>
+		THE ACTION WHICH IS GOING TO BE PERFORMED IS DECIDED WITH THE HELP OF TYPE OF FIRST 		OPERAND
+
+>>> a
+(10, 20, 30, 40)
+>>> b
+(10, 20, 30, 30, 30, 30)
+>>> a + b
+(10, 20, 30, 40, 10, 20, 30, 30, 30, 30)
+>>>
+
+*	-	MULTIPLICATION | REPEATOR
+	
+		IF ALL THE OPERANDS ARE OF NUMBER TYPE THEN IT IS GOING TO MULTIPLY THEM
+	
+>>> a = 10
+>>> b = 5
+>>> a * b
+50
+>>>
+
+		IF ONE OPERAND IS OF INT TYPE (0-9) AND OTHER ONE IS OF COLLECTION TYPE THEN IT WILL 		REPEAT THE COLLECTION INT TIMES
+
+>>> a = 3
+>>> b = "KRISHNA"
+>>> a*b
+'KRISHNAKRISHNAKRISHNA'
+>>>
+		ORDER OF OPERAND DOES NOT MATTERS.
+	
+>>> b*a
+'KRISHNAKRISHNAKRISHNA'
+>>>
+
+>>> 5 * [10,20,30,50]
+[10, 20, 30, 50, 10, 20, 30, 50, 10, 20, 30, 50, 10, 20, 30, 50, 10, 20, 30, 50]
+
+-	-	SUBTRACTION
+
+>>> a
+3
+>>> b = 10
+>>> b-a
+7
+>>>
+
+/	-	divide - quetient
+%	-	mod	- remainder
+//	-	floor divide
+
+>>> 10/3
+3.3333333333333335
+>>> 10//3
+3
+>>>
+
+**	-	power
+
+>>> 10**6
+1000000
+>>>
+
+
+
+ASSINGMENT OPERATORS
+---------------------
+
+LHS = RHS
+assigns the value of rhs to the container | variable. lhs always needs to be a container like object where rhs can be both the value or the container.
+
+    value | literals | number literal | int literal
+A = 10 # VALID
+variable
+
+10 = a # invalid
+
+b = 10
+a = b # valid
+
+a = b = c = 10 # this would create three variables having one value
+
+a,b,c = 10,20,30 # the lhs and rhs objects | values should be same in count
+
+# swapping the values of variables
+
+a,b = 10,20
+
+a,b = b,a # it will swap the values of variables
+
+--------------------------------------------------
+in python you can assign more than one value to a single variable also.
+
+
+-multi-value assignments | packing
+>>> a = 10,20,30,40,50,60
+>>> a
+(10, 20, 30, 40, 50, 60)
+
+once the values have been assinged to it will not be changable.
+
+-starred assignment
+it can never work alone
+you can make changes into the starred assignment variable.
+
+>>> *a,b = 10,20,30,40
+>>> a
+[10, 20, 30]
+>>> b
+40
+>>> *x,y,z = 1,2,3,4,5,6,7,8,9
+>>> x
+[1, 2, 3, 4, 5, 6, 7]
+>>> y
+8
+>>> z
+9
+>>> x,y,*z = 1,2,3,4,5,6,7,8,9
+>>> x
+1
+>>> y
+2
+>>> z
+[3, 4, 5, 6, 7, 8, 9]
+>>>
+
+>>> z[-1] = 1000
+>>> z
+[3, 4, 5, 6, 7, 8, 1000]
+>>>
+
+walrus operator
+	it performs the equality basis comparison and assignment operation at the same time
+
+a = 10
+
+a := 10 # invalid it can not be used like normal assignment operator.
+
+if a := 1050:print('WALRUS USED')
+	
+>>> if krishna := 10:print('WALRUS USED.')
+...
+WALRUS USED.
+>>> krishna
+10
+>>>
+
+arithmetic assignment operators
+---------------------------------
+
+a = "KRISHNA" --> "KRISHNAHARE"
+
+a = a + b		|	a += "HARE" #keep whatever that is already in the a and add 20 with it
+
+*=
+/=
+//=
+%=
+**=
+-=
+------------------------------------------------------------------------
+
+COMPARISON OPERATORS - BOOLEAN (True/False)
+
+>	-	GREATER THAN
+<	-	LESS THAN
+>=	-	GREATER THAN OR EQUALS TO
+<=	-	LESS THAN OR EQUALS TO
+!=	-	NOT EQUALS
+==	-	EQUALS TO
+
+>>> a,b = 10,20
+>>> a > b
+False
+>>>
+
+CHAINING THE COMPARISON.
+	while performing operator chaining the all given expressions should be evaluated to True only 	to get a single True as your final result.
+	
+>>> a>b>100
+False
+>>> a>b and b>200
+False
+>>> a = 30
+>>> a>b>100
+False
+>>>
+>>> b<a>10
+True
+>>>
+
+
+LOGICAL OPERATORS
+-------------------
+and
+	it is going to take infinite expressions and returns a single True if all the given 	expressions evaluates to only True
+
+>>> a,b
+(30, 20)
+>>> a > b and a > 50
+False
+>>> a > b and a > 50 and b < 100
+False
+>>> a > b and a > 5 and b < 100
+True
+>>>
+
+or
+	it is same as and but it returns True if any of the given expression evaluates to True
+
+>>> a,b
+(30, 20)
+>>> a > b or a > 50 or b < 100
+True
+>>> a > 80 or a > 50 or b < 100
+True
+>>>
+
+not
+	reverse the result.
+
+>>> not a > 80 or a > 50 or b < 100
+True
+>>> not (a > 80 or a > 50 or b < 100)
+False
+>>>
+
+note: this operator will just reverse the result that is written just after it.
+
+
+SPECIAL OPERATORS
+------------------
+
+-membership operators
+	these operators are used to check the membership of something in a collection like object.
+
+	in
+
+>>> a = 1,2,4,5,6,7,8,9,4,5,4,5,6,4,4,5,5
+>>> a
+(1, 2, 4, 5, 6, 7, 8, 9, 4, 5, 4, 5, 6, 4, 4, 5, 5)
+>>> 8 in a
+True
+>>> 18 in a
+False
+>>>
+
+	
+	not in
+
+>>> data = "THE QUICK BROWN FOX JUMPS OVER THE LITTLE LAZY DOG"
+>>> 'QUICK' in data
+True
+>>> 'HE' in data
+True
+>>> 'HE' not in data
+False
+>>>
+
+
+-identity operators
+	these operators are used to compare the address of some object on the basis of equality or non 	equality.
+
+
+
+id(object)
+	returns the memory location of given object
+	
+	is
+
+>>> a = 10
+>>> b = 10
+>>> id(a)
+140709414836160
+>>> id(b)
+140709414836160
+>>> a == b
+True
+>>> a is b # are a and b sharing the memory
+True
+	
+	is not
+
+>>> a = 744
+>>> b = 744
+>>> id(a)
+2965336849040
+>>> id(b)
+2965336849168
+>>> a == b
+True
+>>> a is b
+False
+>>> a is not b
+True
+>>>
+
+
+note: the memory sharing is going to work only till the range of ASCII
+
+
+TERNARY OPERATORS
+-------------------
+these operators are used to perform some controlled actions in python.
+
+TrueBody if BooleanValue else FalseBody
+
+>>> t = 16
+>>> print('GOOD MORNING') if t < 12 else print('GOOD EVENING')
+GOOD EVENING
+>>> print('GOOD MORNING') if t < 12 else print('GOOD AFTER NOON') if t < 16 else print('GOOD EVENING')
+GOOD EVENING
+>>> t = 15
+>>> print('GOOD MORNING') if t < 12 else print('GOOD AFTER NOON') if t < 16 else print('GOOD EVENING')
+GOOD AFTER NOON
+>>>
+
+
+
+
+
+STRING HANDLING
+-----------------
+string is a special data type in python which is immutable by nature
+the objects of string data type are created inside the string constant pool where garbage collection is not allowed.
+
+string basically is a collection of various alphabets, numbers and special symbols covered with 
+'data'
+"data"
+"""data
+data
+ """
+'''data
+data
+data'''
+
+string is stored element wised so each element is assigned 2 special numbers which is called indexing.
+	 0 1 2 3 4 5 6		=> POSITIVE (near to the left)
+data = " K R I S H N A "
+	-7-6-5-4-3-2-1		=> NEGATIVE (near to the right)
+
+STATIC STRING
+	once you create a string you will never be able to make changes into that.
+
+>>> data = "KRISHNA"
+>>> data
+'KRISHNA'
+>>> data = "RAMA"
+>>> data[0] = 'R'
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+TypeError: 'str' object does not support item assignment
+>>> del data[0]
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+TypeError: 'str' object doesn't support item deletion
+>>>	
+
+DYNAMIC STRING - STRING FORMATION
+	we can not make changes into a string but we can load something to a string.
+	
+->C-LANGUAGE STANDARD
+
+ANONYMOUS OBJECT
+	an object which does not have any identifier assigned to it
+	
+%s	-	string
+%d	-	int
+%f	-	float
+
+>>> print('THIS IS %s THAT IS %d THOSE ARE %f')
+THIS IS %s THAT IS %d THOSE ARE %f
+>>> print('THIS IS %s THAT IS %d THOSE ARE %f'%('krishna',78,85.05))
+THIS IS krishna THAT IS 78 THOSE ARE 85.050000
+>>> print('THIS IS %s THAT IS %d THOSE ARE %.2f'%('krishna',78,85.05))
+THIS IS krishna THAT IS 78 THOSE ARE 85.05
+>>>
+
+STORED STRING
+
+>>> data = 'THIS IS %s THAT IS %d THOSE ARE %f'
+>>> print(data)
+THIS IS %s THAT IS %d THOSE ARE %f
+>>> print(data%('rama',78,75.02))
+THIS IS rama THAT IS 78 THOSE ARE 75.020000
+
+YOU HAVE TO KEEP DATA TYPES IN YOUR MIND.
+
+>>> print(data%('rama','78',75.02))
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+TypeError: %d format: a number is required, not str
+>>>
+
+=> PYTHON LANGUAGE
+
+ANONYMOUS OBJECT
+
+
+>>> a = 10
+>>> b = 20
+>>> print("THE SUM OF {a} AND {b} IS {a+b}")#no need to remind data types
+THE SUM OF {a} AND {b} IS {a+b}
+>>> print(f"THE SUM OF {a} AND {b} IS {a+b}")#no need to remind data types
+THE SUM OF 10 AND 20 IS 30
+>>> b = 2000000
+>>> a = 1022222
+>>> print(f"THE SUM OF {a} AND {b} IS {a+b:,}")#no need to remind data types
+THE SUM OF 1022222 AND 2000000 IS 3,022,222
+
+>>> a = "krishna"
+>>> print(f"THE DATA IS {a}")
+THE DATA IS krishna
+>>> print(f"THE DATA IS '{a}'")
+THE DATA IS 'krishna'
+>>> print(f"THE DATA IS {a!r}")
+THE DATA IS 'krishna'
+>>>
+
+>>> print(f'THE DATA IS : {a:.2f}')
+THE DATA IS : 78.46
+>>>
+>>> a = 454646516
+>>> print(f'THE AMOUNT IS {a:,}')
+THE AMOUNT IS 454,646,516
+>>>
+
+STORED STRING
+
+>>> data="THE SUM OF {} AND {} IS {}"
+>>> print(data.format(10,20,10+20))
+THE SUM OF 10 AND 20 IS 30
+>>> data="THE SUM OF {1} AND {0} IS {2}"
+>>> print(data.format(10,20,10+20))
+THE SUM OF 20 AND 10 IS 30
+>>>
+
+
+>>> data = "NAME : {name},AGE : {age}, GENDER : {gen}"
+>>> print(data.format_map(dict(age = 45, name="krishna", gen="Male")))
+NAME : krishna,AGE : 45, GENDER : Male
+>>>
+
+WAYS TO ACCESS THE STRING
+---------------------------
+-REF. VAR.
+	when you are required to access the entire string.
+
+>>> data = "the quick brown fox jumps over the little lazy dog."
+>>> print(data)
+the quick brown fox jumps over the little lazy dog.
+>>>
+
+-INDEXING
+	when you are required to access only a single element of your string.
+
+ref_var[i] where i is the index
+
+>>> data
+'the quick brown fox jumps over the little lazy dog.'
+>>> data[0]
+'t'
+>>> data[-1]
+'.'
+>>> data[-10]
+' '
+>>>
+
+-SLICING
+	when you are required to access a piece of string 
+
+ref_var[start:end:step] where start,end and step are the indexes of string
+
+-if start is smaller than the end.
+
+ref_var[start:end-1:step] # everything is optional
+
+default values
+
+start - 0
+end - length of your string
+step - +1 | 1
+
+>>> data
+'the quick brown fox jumps over the little lazy dog.'
+>>> data[:]
+'the quick brown fox jumps over the little lazy dog.'
+>>> len(data)
+51
+>>> data[0:51:1]
+'the quick brown fox jumps over the little lazy dog.'
+>>>
+>>> data[10:]
+'brown fox jumps over the little lazy dog.'
+>>>
+>>> data[:10]
+'the quick '
+>>> data[::2]
+'teqikbonfxjmsoe h itelz o.'
+>>>
+>>> data[10:25]
+'brown fox jumps'
+>>> data[10:25:2]
+'bonfxjms'
+>>>
+
+NEGATIVE INDEXING
+
+>>> data = "KRISHNA"
+>>> data[-3:]
+'HNA'
+>>> data[4:7:1]
+'HNA'
+>>> data[:-2]
+'KRISH'
+>>> data[:5]
+'KRISH'
+>>>
+
+>>> data[1:-1]
+'RISHN'
+>>>
+
+WHEN YOU MIX THE POSITIVE AND NEGATIVE INDEXING NEVER GIVE THE VALUE FOR STEP.
+
+if start is greater than end.
+
+ref_var[start:end+1:step] # nothing is optional
+
+>>> data[5:1]
+''
+>>> data[5:1:-1]
+'NHSI'
+>>>
+
+if only a step is given and that step is in negative then string is accessed from right to left.
+
+>>> data[::-1]
+'ANHSIRK'
+>>> data[::-2]
+'AHIK'
+>>>
+
+USING SLICE FUNCTION 
+	whenever you wish to access the same piece of string from multiple strings you can use slice function
+
+slice(start,end,step)
+
+>>> data
+'KRISHNA'
+>>> s = slice(5,1,-1)
+>>> data[s]
+'NHSI'
+>>>
+
+UTILITY METHOD SUPPORT OF STRING.
+	string has very rich method support available
+
+dir(obj)
+	returns the list of methods available for an object.
+	
+help(obj)
+	returns the help string about the given object.
+
+every utility method support will never make changes into your original string they will just return a new instance | object with new changes.
+
+# USE ALL THE UTILITY METHOD SUPPORT OF STRING.
+
+# GIVEN IS A STRING "hare KRISHNA" YOU NEED TO CONVERT IT TO "KRISHNA HARE" YOU CAN WRITE ONLY AN ONE LINE STATEMENT
+
+# GIVEN IS A STRING "THE QUICK BROWN FOX JUMPS OVER THE LITTLE LAZY DOG." YOU NEED TO TELL NO OF WORDS
+# ONLY ONE LINE CODE IS ALLOWED
+
+# GIVEN IS A STRING "KRISHNA" AND A SEPERATOR "|" YOU NEED RETURN A NEW STRING "K|R|I|..."
+FLOW OF CONTROL
+----------------
+these statements of python lets you control the flow of execution you can repeat the stuff or you can skip the stuff
+
+-control statements | flow statements
+
+1-pass
+	indicates the blank body of something.
+
+print('HELLO WORLD')
+
+def block1(): # indentation 
+	print('STATEMENT 1')
+	print('STATEMENT 2')
+	print('STATEMENT 3')
+
+print('THIS IS NOT PART OF BLOCK 1')
+
+def block2():pass # you wish to leave this block blank
+
+print('THIS IS LAST STATEMENT')
+
+2-break
+	terminates the iteration
+
+for x in range(10,2,-1):
+	print(x)
+	if x < 5:
+		break
+
+
+E:\python 4 pm>python demo.py
+10
+9
+8
+7
+6
+5
+4
+
+3-continue
+	skips the current iteration
+
+for x in range(10,2,-1): # [10,9,8,7,6,5,4,3]
+	if x == 5:
+		continue
+	print(x)
+
+E:\python 4 pm>python demo.py
+10
+9
+8
+7
+6
+4
+3
+
+-conditional statements
+	these statements are going to allow you to have control on the flow which means you can decide 	on your own which statements executes and which statement will not execute.
+
+1-if
+
+syntax
+
+if bool:
+	body
+
+if True is written after if then if body will be executed if False is written after if then body will not execute.
+
+in python at some places the type casting is going to be perform automatically.
+
+1 - int --> 1.0 --> float
+
+
+0 -- False
+None - False
+Other - True
+
+
+if None:
+	print('THIS IS INSIDE IF BODY')
+print('THIS IS LAST STATEMENT OF PROGRAM')
+
+2-if else
+
+if "krishna":
+	print('THIS IS INSIDE IF BODY')
+else:
+	print('THIS IS INSIDE ELSE BODY')
+print('THIS IS LAST STATEMENT OF PROGRAM')
+
+note:else block can never be used alone
+
+
+3-if elif else
+	if you have multiple situations to be checked and multiple result to be produced.
+
+x = input('ENTER SOME VALUE : ')
+
+if x.isdigit():
+	print('THE DATA IS NUMERICAL')
+elif x.isalpha():
+	print('THE DATA IS ALPHABETICAL')
+elif x.isalnum():
+	print('THE DATA IS ALPHABETICAL AND NUMERICAL')
+else:
+	print('DATA IS UNKOWN')
+
+4-nested if
+	putting some flavour of if inside if or else
+
+x = input('ENTER SOME VALUE : ')
+
+if x.isdigit():
+	print('THE DATA IS NUMERICAL')
+elif x.isalpha():
+	if x.isupper():
+		print('THE DATA IS ALPHABETICAL AND IN UPPER CASE')
+	elif x.islower():
+		print('THE DATA IS ALPHABETICAL AND IN LOWER CASE')
+	elif x.istitle():
+		print('THE DATA IS ALPHABETICAL AND IN TITTLE CASE')
+	else:
+		print('DATA IS ALPHABETICAL AND CASE IS UNKNOWN')
+elif x.isalnum():
+	print('THE DATA IS ALPHABETICAL AND NUMERICAL')
+else:
+	print('DATA IS UNKOWN')
+
+THE RANGE FUNCTION
+-------------------
+this function is used to generate the sequence of numbers
+
+-if start is smaller than the end.
+
+range(start,end-1,step) # START AND STEP ARE OPTIONAL
+
+-default values
+
+START - 0
+STEP - +1 | 1
+
+range(1,10,+1) --> 1,2,3,4,5,6,7,8,9
+
+range(10)  -->  0,1,2,3,4,5,6,7,8,9
+if you provide only a single argument to range function then that value will be used for only end.
+
+range(2,10) -->  2,3,4,5,6,7,8,9
+if you provide two arguments to range function then those arguments will be used for start and end.
+
+-if start is greater than end.
+
+range(start,end+1,step) # NOTHING IS OPTIONAL
+
+range(10,2,-2) --> 10,8,6,4
+
+-iterational statements
+	these statements are used to repeat a block of statements
+	
+	for
+		when you know exact number of repeat operations to be performed
+	
+	syntax
+			other programming languages
+		for(initialization;condition;incr/decr){
+			this is the body loop
+		}
+		
+			python programming language
+	
+		for var in collection:
+			this is the body of loop
+		
+		for x in "KRISHNA":
+			print(x)
+
+		E:\python 4 pm>python demo.py
+		K
+		R
+		I
+		S
+		H
+		N
+		A
+		
+		for x in range(10,2,-1):
+			print(x)
+		
+		for-else
+	# if your loop ended flowfully (without break statement) then only else will get executed.
+		for x in range(5):
+			print(x)
+		else:
+			print('this is else block')
+		
+		E:\python 4 pm>python demo.py
+		0
+		1
+		2
+		3
+		4
+		this is else block
+		
+		for x in range(5):
+			if x == 3:break
+			print(x)
+		else:
+			print('this is else block')
+	
+		E:\python 4 pm>python demo.py
+		0
+		1
+		2
+
+
+			
+	while
+		when you don't know about the number of repeat operations to be performed.
+	
+	syntax
+		
+	while bool: # if non boolean value is provided then it will be converted to boolean
+		body
+	
+	# it will keep executing its body till True is written after while.
+	
+# PROGRAM TO FIND THE DIGITS IN A NUMBER
+
+n = 7864546
+digit = 0
+while n:
+	#n = n//10
+	n //= 10 # recommended
+	# digit = digit + 1
+	digit += 1
+
+print("digit : ",digit,"n : ",n)
+
+E:\python 4 pm>python demo.py
+digit :  7 n :  0
+
+# PROGRAM TO FIND THE DIGITS IN A NUMBER
+
+n = 7864
+digit = 0
+while n:
+	#n = n//10
+	if n < 100:
+		break
+	n //= 10 # recommended
+	# digit = digit + 1
+	digit += 1
+else:
+	print("digit : ",digit,"n : ",n)
+
+NESTED LOOPS
+ WE CAN PUT SOME LOOP INSIDE SOME OTHER LOOP
+
+
+*
+**
+***
+****
+*****
+******
+
+for rows in range(6):#[0,1,2,3,4,5]
+	for cols in range(rows+1): # [0] , [0,1] , [0,1,2]
+		print("*",end="")
+	print() # to break line
+	
+1
+22
+333
+4444
+55555
+666666
+
+A
+BB
+CCC
+DDDD
+EEEEE
+FFFFFF
+
+A
+AB
+ABC
+ABCD
+ABCDE
+ABCDEF
+
+******
+*****
+****
+***
+**
+*
+n = 6
+for rows in range(1,n+1):
+	print(" "*(n-rows),'*'*rows,end="")
+	print()
+
+n = 6
+for rows in range(1,n+1):
+	print(" "*(n-rows),end="")
+	for j in range(1,rows+1):
+		print("*",end="")
+	print()
+
+      *
+     **
+    ***
+   ****
+  *****
+ ******
+
+
+
+
+# SOLVE ALL QUESTION.
+
+http://www.cppforschool.com/assignment/flow_1.html
+
+
+
+
+
+
+
+UTILITY METHOD SUPPORT OF STRING
+----------------------------------
+
+*no method can make changes into your original 
+
+-case changing methods
+
+obj.upper()
+	this will return the upper case version of your string 
+
+>>> data.upper()
+'THE QUICK BROWN FOX JUMPS OVER THE LITTLE LAZY DOG.'
+
+obj.lower()
+
+>>> data
+'THE QUICK BROWN FOX JUMPS OVER THE LITTLE LAZY DOG.'
+>>> data.lower()
+'the quick brown fox jumps over the little lazy dog.'
+>>>
+
+obj.title()
+
+>>> data
+'THE QUICK BROWN FOX JUMPS OVER THE LITTLE LAZY DOG.'
+>>> data.title()
+'The Quick Brown Fox Jumps Over The Little Lazy Dog.'
+>>>
+
+obj.capitlize()
+
+makes the first word of your string having first alphabet capital and rest are all in lower case.
+
+>>> data.capitalize()
+'The quick brown fox jumps over the little lazy dog.'
+
+obj.swapcase()
+	
+makes all capital alphabets lower and all lower case alphabets capital.
+
+>>> data
+'THE QUICK BROWN FOX JUMPS OVER THE LITTLE LAZY DOG.'
+>>> data.title()
+'The Quick Brown Fox Jumps Over The Little Lazy Dog.'
+>>> data.title().swapcase()
+'tHE qUICK bROWN fOX jUMPS oVER tHE lITTLE lAZY dOG.'
+>>>
+
+obj.casefold()
+
+returns the version of string which is best for case less comparison.
+
+>>> a = "krishna"
+>>> b = "KRISHNA"
+>>> a == b
+False
+>>> a.casefold()
+'krishna'
+>>> a.casefold() == b.casefold()
+True
+>>>
+
+-padding methods
+
+these methods padds the string with some given character to meet the given length
+
+obj.ljust(length,"symbol")
+	fills the symbol to meet the given length and keep your original strin at the left.
+
+>>> a
+'krishna'
+>>> a.ljust(50,"-")
+'krishna-------------------------------------------'
+>>>
+
+obj.rjust(length,"symbol")
+
+>>> a.rjust(50,"*")
+'*******************************************krishna'
+>>>
+
+obj.center(length,"symbol")
+
+>>> a.center(50,"*")
+'*********************krishna**********************'
+>>>
+
+obj.zfill(length)
+	till python 3.7 it used to work with only numerical string.
+	fills the 0's to meet the given length
+
+>>> a.zfill(50)
+'0000000000000000000000000000000000000000000krishna'
+>>> a = "123"
+>>> a.zfill(50)
+'00000000000000000000000000000000000000000000000123'
+>>>
+
+-spliting nature method
+
+obj.split()
+	splits the string with the help of given seperator and if seperator is not given then it 	splits the string from spaces
+
+>>> data = "the quick brown fox jumps over the little lazy dog."
+>>> data.split()
+['the', 'quick', 'brown', 'fox', 'jumps', 'over', 'the', 'little', 'lazy', 'dog.']
+>>> data.split('o')
+['the quick br', 'wn f', 'x jumps ', 'ver the little lazy d', 'g.']
+>>>
+	
+obj.splitlines()
+
+>>> data = """THE QUICK
+... BROWN FOX
+... JUMPS OVER
+... LITTLE LAZY
+... DOG."""
+>>> data
+'THE QUICK \nBROWN FOX \nJUMPS OVER \nLITTLE LAZY\nDOG.'
+>>> data.split()
+['THE', 'QUICK', 'BROWN', 'FOX', 'JUMPS', 'OVER', 'LITTLE', 'LAZY', 'DOG.']
+>>> data.splitlines()
+['THE QUICK ', 'BROWN FOX ', 'JUMPS OVER ', 'LITTLE LAZY', 'DOG.']
+>>>
+
+obj.rsplit()
+	same as split but it processes from right
+
+>>> data
+'THE QUICK \nBROWN FOX \nJUMPS OVER \nLITTLE LAZY\nDOG.'
+>>> data.rsplit()
+['THE', 'QUICK', 'BROWN', 'FOX', 'JUMPS', 'OVER', 'LITTLE', 'LAZY', 'DOG.']
+>>> data.rsplit('\n')
+['THE QUICK ', 'BROWN FOX ', 'JUMPS OVER ', 'LITTLE LAZY', 'DOG.']
+>>>
+
+
+obj.partition('seperator')
+	it devides your string into three part 1st half , seperator it self, 2nd half
+
+obj.rpartiion()
+	same as partition but it processes from right
+
+>>> data
+'THE QUICK \nBROWN FOX \nJUMPS OVER \nLITTLE LAZY\nDOG.'
+>>> data.partition("\n")
+('THE QUICK ', '\n', 'BROWN FOX \nJUMPS OVER \nLITTLE LAZY\nDOG.')
+>>> data.rpartition("\n")
+('THE QUICK \nBROWN FOX \nJUMPS OVER \nLITTLE LAZY', '\n', 'DOG.')
+>>>
+
+-processing methods
+
+obj.count('substring')
+
+>>> data
+'THE QUICK \nBROWN FOX \nJUMPS OVER \nLITTLE LAZY\nDOG.'
+>>> data.count('T')
+3
+>>> data.count('THE')
+1
+>>>
+
+
+
+obj.find('substring',start,end)
+	returns the starting of given substring if found.
+
+>>> data
+'THE QUICK \nBROWN FOX \nJUMPS OVER \nLITTLE LAZY\nDOG.'
+>>> data.find('OX',10,20)
+18
+>>> data[18]
+'O'
+>>> data.find('OXo',10,20)
+-1
+>>>
+
+obj.index('substring')
+	returns the starting of given substring if found else it raises the error
+
+>>> data
+'THE QUICK \nBROWN FOX \nJUMPS OVER \nLITTLE LAZY\nDOG.'
+>>> data.index("UMP")
+23
+>>> data.index("UMPO")
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+ValueError: substring not found
+>>>
+
+obj.replace('old-substring','new-substring',n)
+	returns the new version of your string where n old substrings are replaced by new substring
+
+>>> data
+'THE QUICK \nBROWN FOX \nJUMPS OVER \nLITTLE LAZY\nDOG.'
+>>> data = data.replace("\n","")
+>>> data
+'THE QUICK BROWN FOX JUMPS OVER LITTLE LAZYDOG.'
+>>> data.replace("O","Q",2)
+'THE QUICK BRQWN FQX JUMPS OVER LITTLE LAZYDOG.'
+
+
+obj.join(collection of strings)
+	returns a version of string where the given string collection's each element is sperated using 	called string.
+
+>>> data
+'THE QUICK BROWN FOX JUMPS OVER LITTLE LAZYDOG.'
+>>> "|".join(data.split())
+'THE|QUICK|BROWN|FOX|JUMPS|OVER|LITTLE|LAZYDOG.'
+>>> "|".join(data)
+'T|H|E| |Q|U|I|C|K| |B|R|O|W|N| |F|O|X| |J|U|M|P|S| |O|V|E|R| |L|I|T|T|L|E| |L|A|Z|Y|D|O|G|.'
+>>>
+
+obj.endswith("substring")
+	returns true if your string is ending with given substring otherwise false
+>>> data
+'the quick brown fox jumps over little lazydog.'
+>>> data.endswith('dog')
+False
+>>> data.endswith('dog.')
+True
+>>>
+
+obj.startswith("substring")
+	returns true if your string is starting with given substring otherwise false
+
+>>> data
+'the quick brown fox jumps over little lazydog.'
+>>> data.startswith("a")
+False
+>>> data.startswith("the")
+True
+>>>
+
+-striping nature method
+	these methods are used to remove the waste spaces from the string
+
+obj.strip()
+
+obj.lstrip()
+
+obj.rstrip()
+
+>>> data = "           krishna               rama                "
+>>> data.strip()
+'krishna               rama'
+>>> data.lstrip()
+'krishna               rama                
+>>> data.rstrip()
+'           krishna               rama'
+>>>
+
+-ENCRYPTION AND DECRYPTION
+
+str.maketrans("abc","!@#")
+	it creates the pattern for enc. or dec.
+
+>>> enc = str.maketrans("abcdefghijklmnopqrstuvwxyz","`~!@#$%^&*()_-+={[}]:;<,>.")
+>>> enc
+{97: 96, 98: 126, 99: 33, 100: 64, 101: 35, 102: 36, 103: 37, 104: 94, 105: 38, 106: 42, 107: 40, 108: 41, 109: 95, 110: 45, 111: 43, 112: 61, 113: 123, 114: 91, 115: 125, 116: 93, 117: 58, 118: 59, 119: 60, 120: 44, 121: 62, 122: 46}
+
+obj.translate(enc/dec pattern)
+	returns the encrypted or decrypted version of your string.
+
+>>> data
+'the quick brown fox jumps over little lazydog.'
+>>> data.translate(enc)
+']^# {:&!( ~[+<- $+, *:_=} +;#[ )&]])# )`.>@+%.'
+>>>
+
+>>> msg
+']^# {:&!( ~[+<- $+, *:_=} +;#[ )&]])# )`.>@+%.'
+>>> dec
+{96: 97, 126: 98, 33: 99, 64: 100, 35: 101, 36: 102, 37: 103, 94: 104, 38: 105, 42: 106, 40: 107, 41: 108, 95: 109, 45: 110, 43: 111, 61: 112, 123: 113, 91: 114, 125: 115, 93: 116, 58: 117, 59: 118, 60: 119, 44: 120, 62: 121, 46: 122}
+>>> msg.translate(dec)
+'the quick brown fox jumps over little lazydogz'
+>>>
+
+
+#      0  1   2 3  4   5   6  7
+data = 45,87,56,7,546,256,25,65
+#      -8 -7 -6-5 -4  -3 -2  -1  
+
+# find max one (index)
+m = 0
+
+for x in range(1,len(data)):
+	if data[x] > data[m]:
+		m = x
+print(data[m])
+
+m = 45
+
+for x in data:
+	if x > m:
+		m = x
+print(m)
+
+# find min one
+
+# find sum of all elements
+total = 0
+for x in data:
+	total += x # total = total + x
+# find average
+
+# find max n elements from data
+
+given = [78,54,25,79,46,23,15,96,72,42]
+n=3
+# SORTING
+for x in range(len(given)):
+	element = x
+	pivot = x
+	# FINDING THE INDEX OF SMALLEST ELEMENT 
+	for comp in range(x+1,len(given)):
+		if given[comp] < given[pivot]:
+			pivot = comp
+	#SWAPING THE VALUES
+	given[element],given[pivot] = given[pivot],given[element]
+
+print(given[-n:])
+
+
+# find min n elements from data
+
+# you are given a list data = 1,2,3,4,5,6,7,8,9 and a k = 8 you need to find all the pairs that can sum up to the k
+# ->1+7,2+6,3+5,4+4,5+3 ...
+
+given = [1,2,3,4,5,6,7,8,9]
+k = 8
+
+for x in given:
+	for y in given:
+		if x == y:
+			continue
+		if x+y == k:
+			print(x,"+",y)
+	
+
+# find the sum of all magic numbers
+	
+#starred_assignment = [45,85,2,3,7,6,1,8,9,10]
+		
+# magic numbers are those numbers which remain on same place even after sortion.
+
+given = [78,54,25,79,46,23,15,96,72,42]
+copy  = [x for x in given]
+n=3
+# SORTING
+for x in range(len(given)):
+	element = x
+	pivot = x
+	# FINDING THE INDEX OF SMALLEST ELEMENT 
+	for comp in range(x+1,len(given)):
+		if given[comp] < given[pivot]:
+			pivot = comp
+	#SWAPING THE VALUES
+	given[element],given[pivot] = given[pivot],given[element]
+
+# FILTER THE MAGIC NUMBERS
+magic_number = [copy[x] for x in range(len(given)) if copy[x] == given[x]]
+
+print(sum(magic_number))
+
+------------------------------------------------------------------------------------------------------
+
+DATA STRUCTURE
+---------------
+WHEN AMOUNT OF DATA IS UNKOWN 
+
+variables = when you know exact amount of data to be stored.
+
+DATA STRUCTURES MAKES YOUR PROGRAM LAZY | SLOW
+
+IF FIRST PRIORITY GOES TO SPEED THEN USING DATA STRUCTURE IS NEVER RECOMMENDED.
+
+CONTAINERS OF DATA WHICH ARE FLEXIBLE IN SIZE
+
+DATA CAN BE FOUND IN TWO MAJOR FORMS
+
+>STRUCTURED
+	EACH DATA POINT IS SOMEHOW CONNECTED WITH OTHER DATA POINT.
+	
+	S No.	Name	Age
+	1	A	45
+	2	B	78
+	3	c	85
+	
+	this is also called tabuller data.
+
+>UNSTRUCTURED
+	NO DATA POINT IS CONNECTED WITH OTHER ANY HOW.
+	
+	1	a	45	85
+	95	asd	78	54
+
+-TEMPRARY DATA STRUCTURES
+	when you need to store your data for temp. purpose as soon as your program ends all the data stored inside tempd. s will be lost.
+
+1-list
+	list is a collection like object which can contain hatergenous objects init and list stores its elements on the basis of indexing
+	duplicate elements are allowed in list since the storage technique is indexing.
+	      0 1 2 3 4
+	ls = [1,1,1,1,1]
+	     -5-4-3-2-1
+	
+	list is mutable by nature
+		which means you can perform update or delete operation on element bases also.
+	
+	list is represented using []
+	
+ways to create the list
+-----------------------
+starred assignment always creates a list object
+
+>>> a,*b = 1,2,3,4,5,6,7,89
+>>> a
+1
+>>> b
+[2, 3, 4, 5, 6, 7, 89]
+>>> type(b)
+<class 'list'>
+
+creating the blank list
+
+>>> ls = []
+>>> type(ls)
+<class 'list'>
+>>> ls = list()
+>>> type(ls)
+<class 'list'>
+>>>
+
+initialized list
+	at the time of creating a list if you assign some elements into it then that list will be called initialized list.
+
+>>> ls = [1,2,3,4,5,67,45,89,45]
+>>> type(ls)
+<class 'list'>
+>>> ls
+[1, 2, 3, 4, 5, 67, 45, 89, 45]
+>>>
+
+list - function
+	it takes no arguments or it takes a collection like object and then prepare a new list by putting each element of given into the new list and at the end it returns that list back
+	
+>>> ls = list()
+>>> ls # blank list
+[]
+>>>
+
+>>> ls = list(range(10))
+>>> ls
+[0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+>>> ls = list("krishna")
+>>> ls
+['k', 'r', 'i', 's', 'h', 'n', 'a']
+>>> ls = ["krishna"]
+>>> ls
+['krishna']
+>>>
+
+list comprehension.
+	if you create the list with the help of list comprehension then you will be able to process
+	the elements of list during its creation.
+	
+
+for var in collection:
+	body
+
+
+[body for var in collection]
+
+>>> ls = [x for x in range(10)]
+>>> ls
+[0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+
+[data.split()[x-1]*x for x in range(1,len(data.split())+1)] # recommended
+['THE', 'QUICKQUICK', 'BROWNBROWNBROWN', 'FOXFOXFOXFOX', 'JUMPSJUMPSJUMPSJUMPSJUMPS', 'OVEROVEROVEROVEROVEROVER', 'THETHETHETHETHETHETHE', 'LITTLELITTLELITTLELITTLELITTLELITTLELITTLELITTLE', 'LAZYLAZYLAZYLAZYLAZYLAZYLAZYLAZYLAZY', 'DOG.DOG.DOG.DOG.DOG.DOG.DOG.DOG.DOG.DOG.']
+
+ls = []
+for x in range(1,len(data.split())+1):
+	ls -> add -> data.split()[x-1]*x		
+ls
+
+# WRITE A LIST COMPREHENSION TO FIND THE LENGH OF EACH ELEMENT AVAILABLE INSIDE ANOTHER GIVEN LIST.
+
+>>> [len(data.split()[x-1]*x) for x in range(1,len(data.split())+1)]
+[3, 10, 15, 12, 25, 24, 21, 48, 36, 40]
+
+USING IF STATEMENT IN LIST COMPREHENSION
+	if you wish to skip some element from adding to the list then you can use it.
+	
+
+[body for var in collection if condition]
+
+for var in collection:
+	if condition:
+		body
+
+>>> ls
+['THE', 'QUICKQUICK', 'BROWNBROWNBROWN', 'FOXFOXFOXFOX', 'JUMPSJUMPSJUMPSJUMPSJUMPS', 'OVEROVEROVEROVEROVEROVER', 'THETHETHETHETHETHETHE', 'LITTLELITTLELITTLELITTLELITTLELITTLELITTLELITTLE', 'LAZYLAZYLAZYLAZYLAZYLAZYLAZYLAZYLAZY', 'DOG.DOG.DOG.DOG.DOG.DOG.DOG.DOG.DOG.DOG.']
+>>> [x for x in ls if len(x)%2 == 0]
+['QUICKQUICK', 'FOXFOXFOXFOX', 'OVEROVEROVEROVEROVEROVER', 'LITTLELITTLELITTLELITTLELITTLELITTLELITTLELITTLE', 'LAZYLAZYLAZYLAZYLAZYLAZYLAZYLAZYLAZY', 'DOG.DOG.DOG.DOG.DOG.DOG.DOG.DOG.DOG.DOG.']
+>>> [x for x in ls if len(x)%2 != 0]
+['THE', 'BROWNBROWNBROWN', 'JUMPSJUMPSJUMPSJUMPSJUMPS', 'THETHETHETHETHETHE']
+
+# WRITE THE LIST COMPREHENSION TO FILTER ALL THE VOWELS FROM A GIVEN STRING
+
+data = input('ENTER SOME DATA PLEASE : ')
+
+vowels =  [x for x in data if x.lower() in "aeiou"]
+
+print(vowels)
+
+# WRITE THE LIST COMPREHENSION IN WHICH "WORD -> LENGHT" IS ASSIGNED ON EACH ELEMENT WHERE WORD IS GRABBED FROM A STRING AND LENGTH WOULD BE FOUND BY YOU.
+	
+	data = "THE QUICK BROWN FOX JUMPS OVER THE LITTLE LAZY DOG"
+	
+	["THE -> 3","QUICK -> 5",.....]
+
+data = input('ENTER SOME DATA PLEASE : ')
+
+word_length =  ["%s -> %d"%(x,len(x)) for x in data.split()]
+
+print(word_length)
+
+# WRITE THE LIST COMPREHENSION IN WHICH THE REVERSE OF EACH ELEMENT IS STORED OF GIVEN LIST.
+
+	["3 >- EHT",....]
+
+# YOU ARE GIVEN A LIST OF RANDOM NUMBERS YOU NEED TO CREATE TWO LISTS OUT OF IT ONE FOR EVEN NUMBERS AND OTHER FOR ODD NUMBERS
+
+	ls = [1,2,23,4,5,78,5415,96,6,4,5,1,2,5,7,415,5]
+	
+# YOU ARE GIVEN A LIST OF NUMERICAL STRINGS YOU NEED FIND MAX ELEMENT FROM EACH STRING AND ASSIGN THAT INTO A LIST.
+
+	["876651","6857461","87896"]
+	
+	[8,8,9]
+
+given = ["8769651","6757461","87896"]
+result = []
+
+# typecast and put all digits into some other collection like object
+for x in given:
+	temp = []
+	for digit in x:
+		temp.append(int(digit)) # this is the method to add something at the end of a list.
+	# find the biggest number and assign that to the result.
+	result.append(max(temp))
+	temp.clear() # making the temp empty so that it will start from fresh
+
+print(result)
+
+# WRITE THE LIST COMPREHENSION TO FILTER ALL THE UNIQUE ELEMENT FROM A GIVEN STRING.
+
+note:- during the comprehension a list can not change its size.
+
+data = input('PLEASE ENTER SOME VALUE : ')
+
+result = []
+# for processing
+[result.append(x) for x in data if x not in result]
+
+#for x in data:
+#	if x not in result:
+#		result.append(x)
+
+print(result)
+
+IF ELSE IN LIST COMPREHENSION.
+
+[TrueBody if condition else FalseBody for var in collection]
+
+[result.append(x) if x not in result else result.append('d') for x in data]
+
+# count the number of duplicate elements available in a given string.
+
+data = input('PLEASE ENTER SOME VALUE : ')
+
+unique = []
+
+duplicate = []
+
+[unique.append(x) if x not in unique else duplicate.append(x) for x in data]
+
+print('UNIQUE ELEMENTS ARE : ',unique,len(unique),sep=" | ")
+print('DUPLICATE ELEMENTS ARE : ',duplicate,len(duplicate),sep=" | ")
+
+NESTED LOOPS IN LIST COMPREHENSION.
+
+[body for var1 in collection1 for var2 in collection2]
+
+for var1 in collection1:
+	for var2 in collection2:
+		body
+print(
+	[x for x in "THE QUICK BROWN" for y in range(ord(x)//10)]
+)
+
+NESTED LISTS
+	a list assigned to some other list as an element
+
+ls = [
+	[1,2,3,4],
+	1,
+	[1,2],
+	[1,2,3,4]
+]
+
+print(ls[0][3])
+
+ls = [
+	list("KRISHNA"),
+	"krishna",
+	[x for x in range(10)]
+]
+print(ls)
+
+MATRIX
+-------
+
+>>> from random import randint
+>>> randint(10,99)
+48
+>>> randint(10,99)
+65
+>>> randint(10,99)
+87
+>>> mat = [[randint(10,50) for col in range(5)] for row in range(5)]
+>>> for x in mat:print(x)
+...
+[50, 38, 49, 21, 16]
+[28, 40, 20, 33, 39]
+[11, 12, 39, 44, 40]
+[39, 14, 38, 27, 29]
+[43, 32, 27, 49, 29]
+>>>
+
+# FIND THE CROSS DIAGONALS USING LIST COMPREHENSION
+
+>>> diagonal = [mat[x][x] for x in range(len(mat))]
+>>> diagonal
+[43, 22, 22, 35, 23]
+
+# FIND THE UPPER AND LOWER CROSS DIAGONALS
+
+>>> upper = [mat[x][x+1] for x in range(len(mat)-1)]
+>>> upper
+[22, 31, 24, 32]
+
+# FIND THE SUM AND MEAN OF EACH ROW AND COLUMN
+
+>>> rows_sum = [sum(row) for row in mat]
+>>> rows_sum
+[193, 173, 139, 130, 120]
+>>> rows_mean = [sum(row)/len(row) for row in mat]
+>>> rows_mean
+[38.6, 34.6, 27.8, 26.0, 24.0]
+>>>
+
+>>> columns_sum = [sum([mat[row][col] for row in range(len(mat))]) for col in range(len(mat))]
+>>> columns_sum
+[126, 115, 143, 191, 180]
+>>> columns_mean = [sum([mat[row][col] for row in range(len(mat))])/len(mat) for col in range(len(mat))]
+>>> columns_mean
+[25.2, 23.0, 28.6, 38.2, 36.0]
+>>>
+
+# TRANSFORM THE ROWS INTO COLUMNS AND COLUMNS INTO ROWS.
+
+>>> [mat[row][col] for col in range(len(mat)) for row in range(len(mat))]
+[43, 30, 31, 11, 11, 22, 22, 25, 23, 23, 40, 31, 22, 29, 21, 46, 44, 24, 35, 42, 42, 46, 37, 32, 23]
+>>> t = [[mat[row][col] for row in range(len(mat))] for col in range(len(mat))]
+>>> for x in t:print(x)
+...
+[43, 30, 31, 11, 11]
+[22, 22, 25, 23, 23]
+[40, 31, 22, 29, 21]
+[46, 44, 24, 35, 42]
+[42, 46, 37, 32, 23]
+
+# FIND THE INNER RECTABGLE ELEMENTS USING LISE COMPREHENSION.
+
+# SOLVE AS MANY QUETIONS AS YOU CAN FROM BELOW GIVEN LINK
+
+https://www.w3resource.com/python-exercises/list/
+
+ACCESSING THE LISTS
+---------------------
+reference variable
+	whenever you are required to access your entire list then you can use it.
+
+>>> ls = list("KRISHNA")
+>>> print(ls)
+['K', 'R', 'I', 'S', 'H', 'N', 'A']
+>>>
+
+indexing
+	whenever you need to access some single particular element of your list then you can use it.
+
+>>> ls
+['K', 'R', 'I', 'S', 'H', 'N', 'A']
+>>> ls[5]
+'N'
+>>> ls[-2]
+'N'
+>>>
+
+if you need to access the element that is near to the right then you should go for negative indexing and if you need to access the element that is near to the left then you should go for positive indexing and if the element is in the middle then you can use whichever you wish use.
+
+
+slicing
+	whenever you need to access the piece of your list then you can use it.
+
+ref_var[4] -> index operator
+
+ref_var[:] -> slicing operator
+
+IF START IS SMALLER THAN THE END
+
+ref_var[start:end-1:step] # everything is optional
+
+-default values 
+
+start = 0
+end = length of your list
+step = 1 | +1
+
+>>> ls
+['K', 'R', 'I', 'S', 'H', 'N', 'A']
+>>> ls[:] # start = 0, end = 7,step = +1
+['K', 'R', 'I', 'S', 'H', 'N', 'A']
+
+>>> ls
+['K', 'R', 'I', 'S', 'H', 'N', 'A']
+>>> ls[2:] # start = 2, end = 7, step = 1
+['I', 'S', 'H', 'N', 'A']
+>>>
+
+>>> ls
+['K', 'R', 'I', 'S', 'H', 'N', 'A']
+>>> ls[:5] # start = 0, end = 5,step = 1 
+['K', 'R', 'I', 'S', 'H']
+>>>
+
+>>> ls
+['K', 'R', 'I', 'S', 'H', 'N', 'A']
+>>> ls[::2] # start = 0 , end = 7, step = 2
+['K', 'I', 'H', 'A']
+>>>
+
+whenever you use the negative indexing in slicing then with reference of negative indexing the positive indexing will be used.
+
+>>> ls
+['K', 'R', 'I', 'S', 'H', 'N', 'A']
+>>> ls[-1:] # start = 6, end = 7, step = 1
+['A']
+>>>
+
+>>> ls
+['K', 'R', 'I', 'S', 'H', 'N', 'A']
+>>> ls[:-2] # start = 0, end = 5, step = 1
+['K', 'R', 'I', 'S', 'H']
+>>>
+
+
+you can also mix the positive and negative indexing.
+
+>>> ls
+['K', 'R', 'I', 'S', 'H', 'N', 'A']
+>>> ls[1:-1] # start = 1, end = 6
+['R', 'I', 'S', 'H', 'N']
+>>>
+
+it is recommended whenever you mix the positive and negative indexing to never give the step.
+
+>>> ls
+['K', 'R', 'I', 'S', 'H', 'N', 'A']
+>>> ls[1:-1:2] # start = 6, end = 7, step = 1
+['R', 'S', 'N']
+>>>
+
+slice function
+	returns the slicer object which can be used as slicing data.
+
+s = slice(start,end,step)
+
+>>> ls
+['K', 'R', 'I', 'S', 'H', 'N', 'A']
+>>> s = slice(1,-1)
+>>> ls[s]
+['R', 'I', 'S', 'H', 'N']
+>>>
+
+IF START IS BIGGER THAN END.
+
+ref_var[start:end+1:step] # nothing is optional
+
+>>> ls
+['K', 'R', 'I', 'S', 'H', 'N', 'A']
+>>> ls[5:1]
+[]
+>>> ls[5:1:-1]
+['N', 'H', 'S', 'I']
+>>>
+
+IF ONLY STEP IS GIVEN AND THAT STEP IS IN NEGATIVE FORM THEN LIST WILL BE ACCESSED IN REVERSE ORDER.
+
+>>> ls
+['K', 'R', 'I', 'S', 'H', 'N', 'A']
+>>> ls[::-1]
+['A', 'N', 'H', 'S', 'I', 'R', 'K']
+>>> ls[::-2]
+['A', 'H', 'I', 'K']
+>>>
+
+ASSIGNMENT IN LISTS
+
+indexing assignment
+	when you need to assign only a single element onto some particular index.
+
+>>> ls
+['K', 'R', 'I', 'S', 'H', 'N', 'A']
+>>> ls[-1] = "AA"
+>>> ls
+['K', 'R', 'I', 'S', 'H', 'N', 'AA']
+>>> ls[0] = "KK"
+>>> ls
+['KK', 'R', 'I', 'S', 'H', 'N', 'AA']
+>>>
+
+slicing assignment
+	when you need to assign more than one element at a time onto more than one index.
+
+-rules
+1-if lhs piece is same in length as the rhs then entire slice will be replaced.
+
+>>> ls
+['KK', 'R', 'I', 'S', 'H', 'N', 'AA']
+>>> ls[:3]
+['KK', 'R', 'I']
+>>> ls[:3] = [1,2,3]
+>>> ls
+[1, 2, 3, 'S', 'H', 'N', 'AA']
+>>>
+
+2-if lhs and rhs are both equal in length but the elements of lhs are not continously accessed then all the particular elements will be replaced
+
+>>> ls
+[1, 2, 3, 'S', 'H', 'N', 'AA']
+>>> ls[::2]
+[1, 3, 'H', 'AA']
+>>> ls[::2] = "RAMA"
+>>> ls
+['R', 2, 'A', 'S', 'M', 'N', 'A']
+>>>
+
+3-if lhs is smaller than the rhs in length then all possible elements will be replaced and rest will extend the list.
+
+>>> ls
+['R', 2, 'A', 'S', 'M', 'N', 'A']
+>>> ls[:3]
+['R', 2, 'A']
+>>> ls[:3] = [1,2,3,4,5,6]
+>>> ls
+[1, 2, 3, 4, 5, 6, 'S', 'M', 'N', 'A']
+>>>
+
+*note : size mismatch can only work with continuously accessed slices
+>>> ls
+[1, 2, 3, 4, 5, 6, 'S', 'M', 'N', 'A']
+>>> ls[::3]
+[1, 4, 'S', 'A']
+>>> ls[::3] = [10,20,30,40,50,60]
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+ValueError: attempt to assign sequence of size 6 to extended slice of size 4
+>>>
+
+4- if lhs is bigger than the rhs in length then entire lhs will be replaced by rhs
+
+>>> ls
+[1, 2, 3, 4, 5, 6, 'S', 'M', 'N', 'A']
+>>> ls[:3]
+[1, 2, 3]
+>>> ls[:3] = [10,20]
+>>> ls
+[10, 20, 4, 5, 6, 'S', 'M', 'N', 'A']
+>>>
+
+you are given a list [1,2,3,4,5,6,7,8,9,10] you need to have a window from user and return then multi-dim list with help of that window using comprehension and flow of control also
+
+given = [1,2,3,4,5,6,7,8,9,10]
+w = 3
+
+result = [[1,2,3],[2,3,4],[3,4,5],[4,5,6],[5,6,7],[6,7,8],[7,8,9],[8,9,10]]
+
+UTILITY METHOD SUPPORT OF LIST
+--------------------------------
+python's list is fully loaded with the bunch of methods which can performs some particular opertions with the list.
+
+we are never going to use the magic methods (the methods starting with dual underscores and ending with dual underscores as well) directly they are called internally whenever we call some particular or use some operator
+
+>>> [1,2,3] >= [0,0,0]
+True
+>>> [1,2,3].__ge__([0,0,0])
+True
+
+-ADD NATURE
+
+ls.append(object)
+	appends the given object to the tail of your list.
+
+>>> ls
+['THE', 'QUICK', 'BROWN', 'FOX', 'JUMPS', 'OVER', 'THE', 'LITTLE', 'LAZY', 'DOG.']
+>>> ls.append(456456)
+>>> ls
+['THE', 'QUICK', 'BROWN', 'FOX', 'JUMPS', 'OVER', 'THE', 'LITTLE', 'LAZY', 'DOG.', 456456]
+>>>
+
+ls.insert(index,object)
+	inserts the given object onto the given index.
+	no replace operation will be performed
+
+>>> ls
+['THE', 'QUICK', 'BROWN', 'FOX', 'JUMPS', 'OVER', 'THE', 'LITTLE', 'LAZY', 'DOG.', 456456]
+>>> ls.insert(4,"krishna")
+>>> ls
+['THE', 'QUICK', 'BROWN', 'FOX', 'krishna', 'JUMPS', 'OVER', 'THE', 'LITTLE', 'LAZY', 'DOG.', 456456]
+>>>
+
+insert and append both the methods are adding only a single element to the list.
+
+ls.extend(collection of objects.) # non collection object will cause an error
+	takes the collection of objects and perform append operation for each element in given 	collection.
+
+>>> ls = [1,2,3]
+>>> ls
+[1, 2, 3]
+>>> ls.append("krishna")
+>>> ls
+[1, 2, 3, 'krishna']
+>>> ls[3]
+'krishna'
+>>> ls.extend("krishna")
+>>> ls
+[1, 2, 3, 'krishna', 'k', 'r', 'i', 's', 'h', 'n', 'a']
+>>>
+
+-REMOVE NATURE
+	
+ls.remove(object)
+	removes the given object from the list.
+	it starts from left hand side and removes the left most found element
+	if given object not present in the list then error will be raised.
+
+>>> ls = [1,2,3,4,5,61,1,2,3,4,8,4,1,1,333,1,1]
+>>> ls.remove(1)
+>>> ls
+[2, 3, 4, 5, 61, 1, 2, 3, 4, 8, 4, 1, 1, 333, 1, 1]
+>>> ls.remove(1)
+>>> ls
+[2, 3, 4, 5, 61, 2, 3, 4, 8, 4, 1, 1, 333, 1, 1]
+>>>
+
+ls.pop(index = -1) # since it has the default value available so it optional provide
+	if index not given then it will remove the last element from the list and return that back 	exact where the pop method was called.
+	if index is given then also it will perform the same operation for given index.
+
+>>> ls
+[2, 3, 4, 5, 61, 2, 3, 4, 8, 4, 1, 1, 333, 1, 1]
+>>> x = ls.pop()
+>>> x
+1
+>>> ls
+[2, 3, 4, 5, 61, 2, 3, 4, 8, 4, 1, 1, 333, 1]
+>>> ls.pop(4)
+61
+>>> ls
+[2, 3, 4, 5, 2, 3, 4, 8, 4, 1, 1, 333, 1]
+>>>
+
+del
+	this keyword of python which can be used to delete any python object
+
+>>> ls
+[2, 3, 4, 5, 2, 3, 4, 8, 4, 1, 1, 333, 1]
+>>> del ls[0] # this will delete the selected element
+>>> ls
+[3, 4, 5, 2, 3, 4, 8, 4, 1, 1, 333, 1]
+>>> del ls[:3] # this will delete the first 3 elements
+>>> ls
+[2, 3, 4, 8, 4, 1, 1, 333, 1]
+>>> del ls # this will delete the reference variable
+>>> ls
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+NameError: name 'ls' is not defined
+>>>
+
+ls.clear()
+	empty the list.
+	
+
+>>> ls
+[1, 2, 3, 4, 5, 6, 7, 8, 9]
+>>> ls.clear()
+>>> ls
+[]
+>>>
+
+or
+
+>>> ls
+[1, 2, 3, 4, 5, 6, 7, 8, 9]
+>>> del ls[:]
+>>> ls
+[]
+>>>
+
+COPYING OR CLONING
+-------------------
+this is the process of recreating the new list with the help of some other list
+in which each and every single element is gonna be same
+
+-deep 
+	the new reference variable will start pointing to the same location where older one was pointing to this will make changes into all the copies if any changes made by any copy.
+
+>>> ls = [1,2,3,4]
+>>> ls1 = ls
+>>> id(ls)
+1794370431616
+>>> id(ls1)
+1794370431616
+>>> ls is ls1
+True
+>>> ls
+[1, 2, 3, 4]
+>>> ls1
+[1, 2, 3, 4]
+>>> ls[0]="krishna"
+>>> ls
+['krishna', 2, 3, 4]
+>>> ls1
+['krishna', 2, 3, 4]
+>>>
+
+-shallow
+	a new copy of the object will be created inside the computer memory and new reference variable 	will start pointing to that new object so changes made by any copy will not be reflected for 	other copies.
+
+>>> x = [1,2,3]
+>>> y = x.copy()
+>>> id(x)
+1794370431872
+>>> id(y)
+1794370470336
+>>> x is y
+False
+>>> x
+[1, 2, 3]
+>>> x[0]="krishna"
+>>> x
+['krishna', 2, 3]
+>>> y
+[1, 2, 3]
+>>>
+
+ls.copy() 
+	return the shallow copy of list.
+
+-PROCESSING NATURE
+
+ls.count(object)
+	returns the number of existances of an object in the list.
+
+>>> ls
+['krishna', 2, 3, 4, 'krishna', 2, 3, 4, 'krishna', 2, 3, 4]
+>>> ls.count("krishna")
+3
+>>> ls.count("harekrishna") 
+0
+>>>
+
+ls.index(object)
+	returns the index (positive) of given object if given object exists multiple times then left 	most element index will be returned
+	if element not present in the list then error will be raised.
+
+>>> ls
+['krishna', 2, 3, 4, 'krishna', 2, 3, 4, 'krishna', 2, 3, 4]
+>>> ls.index(3)
+2
+>>> ls.index(300)
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+ValueError: 300 is not in list
+>>>
+
+ls.reverse()
+	reverse the list and actual changes made with the original list
+
+>>> ls
+['krishna', 2, 3, 4, 'krishna', 2, 3, 4, 'krishna', 2, 3, 4]
+>>> ls.reverse()
+>>> ls
+[4, 3, 2, 'krishna', 4, 3, 2, 'krishna', 4, 3, 2, 'krishna']
+>>>
+	
+SORTION
+-HOMOGENOUS LIST
+
+
+ls.sort(key=None,reverse=False)
+	this method sorts the list with the help of given principle and sorts in 	decreasing order if reverse is True
+
+>>> ls = "THE QUICKK BROWN FOX JUMMPS OVER THE LITTLE LAZY DOG.".split()
+>>> ls
+['THE', 'QUICKK', 'BROWN', 'FOX', 'JUMMPS', 'OVER', 'THE', 'LITTLE', 'LAZY', 'DOG.']
+>>> ls.sort()
+>>> ls
+['BROWN', 'DOG.', 'FOX', 'JUMMPS', 'LAZY', 'LITTLE', 'OVER', 'QUICKK', 'THE', 'THE']     #got sorted in the alphabetical order taking the first alphabet of each word in consideration.
+
+>>> ls.sort(reverse=True)
+>>> ls
+['THE', 'THE', 'QUICKK', 'OVER', 'LITTLE', 'LAZY', 'JUMMPS', 'FOX', 'DOG.', 'BROWN']
+>>> len("krishna")
+7
+>>> show = print
+>>> show("krishna")
+krishna
+>>> len(ls[0])
+3
+>>> len(ls[1])
+3
+>>> ls.sort(key=len)
+>>> ls
+['THE', 'THE', 'FOX', 'OVER', 'LAZY', 'DOG.', 'BROWN', 'QUICKK', 'LITTLE', 'JUMMPS']
+>>>
+lambda
+	this is the keyword of python which is used to create the function instantly
+	a function is  nothing but the group of various python statements to carryout the  	specific task
+	
+>>> len("krishna")
+7
+>>> length = lambda x:sum([1 for y in x])
+>>> length
+<function <lambda> at 0x000001DE92C461F0>
+>>> length("krishna")
+7
+>>> length("krishnahare")
+11
+>>>
+
+
+>>> ls
+['THE', 'THE', 'FOX', 'OVER', 'LAZY', 'DOG.', 'BROWN', 'QUICKK', 'LITTLE', 'JUMMPS']
+>>> func = lambda x:len(x) if len(x)%2 == 0 else 10000000000000
+>>> func("krishna")
+10000000000000
+>>> func("krishn")
+6
+>>> ls.sort(key = func)
+>>> ls
+['OVER', 'LAZY', 'DOG.', 'QUICKK', 'LITTLE', 'JUMMPS', 'THE', 'THE', 'FOX', 'BROWN']
+>>>
+
+
+>>> ls
+['THE', 'THE', 'FOX', 'OVER', 'LAZY', 'DOG.', 'BROWN', 'QUICKK', 'LITTLE', 'JUMMPS']
+>>> func = lambda x:len(x) if len(x)%2 == 0 else 10000000000000
+>>> func("krishna")
+10000000000000
+>>> func("krishn")
+6
+>>> ls.sort(key = func)
+>>> ls
+['OVER', 'LAZY', 'DOG.', 'QUICKK', 'LITTLE', 'JUMMPS', 'THE', 'THE', 'FOX', 'BROWN']
+>>>	
+
+
+2-tuple
+	tuple is also an indexed based collection of hetergenous objects where insertion order is 	preserved and duplicates are allowed.
+
+	tuple is same as list but it is faster then list.
+	
+	tuple is immutable by nature..
+
+	tuple stores its elements on the basis of indexing.
+	
+
+ways to create the tuples
+
+ts = () # blank tuple
+
+ts = (1,2,3,4)	
+
+ts = tuple() # blank tuple "you will never create blank tuples you won't be able to add the elements"
+
+packing
+	if you assign more than one value to a single variable then that variable will automatically 	become the tuple
+
+ts = 1,2,3 # it will become tuple
+
+unpacking
+
+a,b,c = ts
+
+>>> ts = 1,2,3
+>>> type(ts)
+<class 'tuple'>
+>>> ts
+(1, 2, 3)
+>>>
+
+comprehension is not possible with tuple.	
+
+>>> ts = (x for x in range(10))
+>>> ts
+<generator object <genexpr> at 0x00000224862B0190>
+>>> type(ts)
+<class 'generator'>
+>>>
+
+if you ever try to use comprehension with tuple you will not get any error but you will also not get any tuple it will become the generator.
+
+
+accessing the elements of tuple
+
+REF VARIABLES
+
+>>> ts = 1,2,3,4,56
+>>> ts
+(1, 2, 3, 4, 56)
+>>>
+
+INDEXING
+	whenever you need to access the single element of your tuple then you can used indexing.
+	
+>>> ts
+(1, 2, 3, 4, 56)
+>>> ts[0]
+1
+>>> ts[-1]
+56
+>>>
+
+SLICING
+	if you ever need to access the piece of your tuple.
+	all the rules of slicing are same as list for tuple.
+	
+
+**since tuple is immutable by nature so those of assignment using slicing is not allowed with tuple
+
+utility method support of tuple.
+
+ts.count(object)
+	returns the number of existances of given object.
+
+ts.index(object)
+	returns the index of given object and if element is present inside the tuple more than one 	time then left most element index will be returned and if element is not present then error 	will be raised.
+
+hashing | hashcode
+--------------------
+	it is nothing but a random number generated by pvm to be used as storage principle for some of 	its data structure.
+
+	hashcode can only be generated of immutable objects.
+	
+	hash(immutable object)
+		this function takes an immutable object and returns its hashcode.
+
+	hashcode of small numbers (10 digit number) will always be that same number
+	hash code of True and False will always be 1 and 0
+	hash code changes machine to machine and run to run
+	
+
+	
+3-set
+	set is a collection of hashable hetergenous objects where insertion order is not preserved and 	duplicates are not allowed.
+
+	set is mutable by nature.
+	
+
+ways to create the set
+
+st = {} # blank dictionary
+st = set() # blank set
+st = {1,2,3,4,87,45,True} 
+st = set(collection of hashable objects)
+
+set comprehension is possible
+
+{x for x in collection} 
+{x for x in collection if condition}
+{x for x in collection for y in collection}
+{x for x in collection for y in collection if condition}
+{x if x > 10 else x**2 for x in collection}
+
+accessing the elements of set
+
+since set does not have indexing so there is no way to access the set using indexing or slicing.
+the only way by which you can access the set is using iterator (for loop, while loop)
+
+reference variables
+
+>>> st
+{0, 1, 2, 3, 4, 5, 6, 7, 8, 9}
+>>>
+
+using iterator
+
+>>> for x in st:print(x)
+...
+0
+1
+2
+3
+4
+5
+6
+7
+8
+9
+>>>
+
+>>> while len(st) > 0:print(st.pop())
+...
+1
+2
+3
+4
+5
+6
+7
+8
+9
+>>> st
+set()
+>>>
+
+UTILITY METHOD SUPPORT OF SETS.
+
+st.difference(another set)
+	returns the uncommon elements of called set
+	a new set will be returned containing all uncommon elements no changes will be made with your 	original set.
+
+>>> st
+{0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 100, 'hare krishna', 45645646546546545645646546546546546546546, 'krishna'}
+>>> st1 = {1,2,3,4,5,6,7,8,9,77,88,55,"krishna"}
+>>> st.difference(st1)
+{0, 100, 'hare krishna', 45645646546546545645646546546546546546546}
+>>> st1.difference(st)
+{88, 77, 55}
+>>>
+
+st.difference_update(another set)
+	same as difference but it will not return any new set as its result it is going to make 	changes into the called set directly.
+
+>>> st
+{0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 100, 'hare krishna', 45645646546546545645646546546546546546546, 'krishna'}
+>>> st1
+{1, 2, 3, 4, 5, 6, 7, 8, 9, 77, 55, 88, 'krishna'}
+>>> st.difference_update(st1)
+>>> st
+{0, 100, 'hare krishna', 45645646546546545645646546546546546546546}
+>>>
+
+st.intersection(another set)
+	returns the new set containing all common element from both the sets.
+
+>>> a = {1,2,3,4,5,6}
+>>> b = {4,5,6,7,8,9}
+>>> a.intersection(b)
+{4, 5, 6}
+
+st.remove(object)
+	removes the given object from set
+	when you know about the object that you need to remove.
+
+>>> a
+{1, 2, 3, 4, 5, 6}
+>>> a.remove(6)
+>>> a
+{1, 2, 3, 4, 5}
+>>>
+
+st.pop()
+	removes the element which has the lowest hash value and return that object back to the code.
+
+>>> a
+{1, 2, 3, 4, 5}
+>>> a.pop()
+1
+>>> a.pop()
+2
+>>> a
+{3, 4, 5}
+>>>
+
+# write the set comprehension to have the name and surname from user 10 times and you need to store each name and surename given by the user in set
+
+# you have two given sets
+
+a = {1,2,3,4,5,6,7,8,9}
+b = {10,20,30,40,50,60,70,80,90}
+
+you need create the third set using comprehension which will be having the following result
+
+c = {1,10,2,20,...}
+
+st.update(collection of hashable objects)
+	updates the called set with given hashable collection's objects.
+
+>>> b
+{4, 5, 6, 7, 8, 9}
+>>> b.update([1,2,3,4,5,6,7,8,9])
+>>> b
+{1, 2, 3, 4, 5, 6, 7, 8, 9}
+>>>
+
+st.union(another set)
+	returns a new set in which the union of sets will be stored
+
+>>> a
+{4}
+>>> a = {1,2,3,4,5,6}
+>>> b = {4,5,6,7,8,9}
+>>> a.union(b)
+{1, 2, 3, 4, 5, 6, 7, 8, 9}
+>>>
+
+
+
+4-frozenset
+	it is same as set but it is faster then the set.
+	it is immutable by nature.
+
+ways to create the frozenset
+
+fst = frozenset(collection of hashable objects)
+
+>>> fst = frozenset("krishna")
+>>> fst
+frozenset({'i', 'r', 'a', 'h', 'n', 's', 'k'})
+>>> type(fst)
+<class 'frozenset'>
+
+# USE ALL THE UTILITY METHOD SUPPORT OF SETS AND FROZENSETINTO WHATSAPP GROUP
+
+5-dictionary {}
+	dictionary is a collection of key value pairs where key can never be duplicate and non 	hashable but values can be duplicate and non hashable as well.
+	for storing the keys into the dictionary the python uses the same principle as it was using to 	store the elements into set.
+	values are just mapped with the keys.
+	
+	keys and values both the things can be hatergenous	
+	dictionary is also mutable by nature.
+		
+
+ways to create the dictionary
+
+dt = {} # blank dictionary
+dt = dict() # blank dictinary
+
+
+dt = {1:"One",2:'Two',"Three":3}
+
+dt = {{1,2,3}:"this is a set"} # this will raise error Unhashable type set
+dt = {"this is a set":{1,2,3}} # valid
+
+>>> dt = {}
+>>> type(dt)
+<class 'dict'>
+>>> dt = dict()
+>>> type(dt)
+<class 'dict'>
+>>>
+
+>>> dt = {1:"krishna",2:"hare krishna",True:False}
+>>> dt
+{1: False, 2: 'hare krishna'}
+>>> type(dt)
+<class 'dict'>
+>>> dt = {1:"krishna",2:"hare krishna",True:False,1:"rama"}
+>>> dt
+{1: 'rama', 2: 'hare krishna'}
+>>>
+
+dict-function
+	this function takes no arguments or it takes a collection like object where at every element 	another collection of two elements is available out of which first element should be hashable 	just because that is gonna be treated as the key for pair
+
+data = ([1,"ONE"],[2,"TWO"])
+
+data[0] --> [1,"ONE"]
+
+>>> data
+[[0, 'a'], [1, 'b'], [2, 'c'], [3, 'd'], [4, 'e'], [5, 'f'], [6, 'g'], [7, 'h'], [8, 'i'], [9, 'j']]
+>>> dt = dict(data)
+>>> dt
+{0: 'a', 1: 'b', 2: 'c', 3: 'd', 4: 'e', 5: 'f', 6: 'g', 7: 'h', 8: 'i', 9: 'j'}
+>>>
+
+you can use the dict function to create the dictionary by providing the keywords arguments but you will have to follow the rules of identifiers for key.
+
+>>> dt = {0:'krishna'}
+>>> dt
+{0: 'krishna'}
+>>> dt = dict(0="krishna")
+  File "<stdin>", line 1
+SyntaxError: expression cannot contain assignment, perhaps you meant "=="?
+>>> dt = dict(a="krishna")
+>>> dt
+{'a': 'krishna'}
+>>> dt = dict(a="krishna",b="rama",c="tenali")
+>>> dt
+{'a': 'krishna', 'b': 'rama', 'c': 'tenali'}
+>>>
+
+zip-function
+	this function allows you to access more than one collection at same time.
+	
+>>> a
+(1, 2, 3, 4, 5, 6, 7, 8, 9)
+>>> b
+(10, 20, 30, 40, 50, 60, 70, 80, 90)
+>>> c
+(100, 200, 300, 500)
+>>> for x,y,z in zip(a,b,c):print(x,y,z)
+...
+1 10 100
+2 20 200
+3 30 300
+4 40 500
+>>>
+
+note---only n elements from each collection will accessed where n is the length of smallest collection 	you provided to zip function.
+
+
+
+
+ 
+>>> keys
+[0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+>>> values
+('h', 'a', 'r', 'e', 'k', 'r', 'i', 's', 'h', 'n', 'a')
+>>> dt = dict(zip(keys,values))
+>>> dt
+{0: 'h', 1: 'a', 2: 'r', 3: 'e', 4: 'k', 5: 'r', 6: 'i', 7: 's', 8: 'h', 9: 'n'}
+
+DICTIONARY COMPREHENSION
+	
+{key:value for x in collection}
+
+>>> dt = {x:chr(x+97) for x in range(10)}
+>>> dt
+{0: 'a', 1: 'b', 2: 'c', 3: 'd', 4: 'e', 5: 'f', 6: 'g', 7: 'h', 8: 'i', 9: 'j'}
+>>>
+
+{key:value for x in collection for y in collection}
+
+>>> dt = {x:chr(x+97) for x in range(10) for y in range(3)}
+>>> dt
+{0: 'a', 1: 'b', 2: 'c', 3: 'd', 4: 'e', 5: 'f', 6: 'g', 7: 'h', 8: 'i', 9: 'j'}
+>>>
+
+{key:value for x in collection if condtion}
+
+>>> dt = {x:chr(x+97) for x in range(10) if x > 5}
+>>> dt
+{6: 'g', 7: 'h', 8: 'i', 9: 'j'}
+>>>
+
+
+ACCESSING THE ELEMENTS OF DICTIONARY
+--------------------------------------
+
+dt.keys()
+	if you are required to access only keys of your dictionary
+
+>>> data
+{'krishna': 'sharma', 'rama': 'singh'}
+>>> data.keys()
+dict_keys(['krishna', 'rama'])
+>>>
+
+every direct operations performed on dictionary is performed with its keys only.
+
+>>> data
+{'krishna': 'sharma', 'rama': 'singh'}
+>>> for x in data:
+...     print(x)
+...
+krishna
+rama
+>>> 'sharma' in data
+False
+>>> 'rama' in data
+True
+>>>
+
+dt.values()
+	if you ever required to access only values of a dictionary then you can use it.
+
+>>> data
+{'krishna': 'sharma', 'rama': 'singh'}
+>>> data.values()
+dict_values(['sharma', 'singh'])
+>>> 'sharma' in data.values()
+True
+>>>
+
+dt.items()
+	if you ever required to access key and value together then you can use it.
+
+>>> data
+{'krishna': 'sharma', 'rama': 'singh'}
+>>> for x in data:print(x)
+...
+krishna
+rama
+>>> for x in data.values():print(x)
+...
+sharma
+singh
+>>> for x,y in data.items():print(x,y,sep="->")
+...
+krishna->sharma
+rama->singh
+>>>
+
+if you need to access the value of a pair
+
+dt[key] -> value
+	not recommended because there will always chance of error
+
+>>> data
+{'krishna': 'sharma', 'rama': 'singh'}
+>>> data['krishna']
+'sharma'
+>>> data['krishnaa']
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+KeyError: 'krishnaa'
+>>>
+
+df.get(key,default value)
+	returns the value associated with the given key if key is not present in dictionary then 	default value will be returned
+	
+>>> data
+{'krishna': 'sharma', 'rama': 'singh'}
+>>> data.get("krishna")
+'sharma'
+>>> data.get("krishnaa")
+>>> data.get("krishnaa","not present")
+'not present'
+>>>
+
+adding or replace the pair or its value
+
+>>> data['tenali'] = "sharma" # it will create new pair in dict if tenali key is not present else it will replace the value of tenali pair
+>>> data
+{'krishna': 'sharma', 'rama': 'singh', 'tenali': 'sharma'}
+>>> data['tenali'] = "singh"
+>>> data
+{'krishna': 'sharma', 'rama': 'singh', 'tenali': 'singh'}
+>>>
+
+dt.setdefault(key,value)
+	creates the new pair in the dictionary if given key is not present already else it will do 	nothing.
+
+>>> data
+{'krishna': 'sharma', 'rama': 'singh', 'tenali': 'singh'}
+>>> data.setdefault("tenali","xyz")
+'singh'
+>>> data
+{'krishna': 'sharma', 'rama': 'singh', 'tenali': 'singh'}
+>>> data.setdefault("new pair","xyz")
+'xyz'
+>>> data
+{'krishna': 'sharma', 'rama': 'singh', 'tenali': 'singh', 'new pair': 'xyz'}
+>>>
+
+# you are given a dictionary and you need reverse each of that dictionary
+
+given = {'krishna': 'sharma', 'rama': 'singh', 'tenali': 'singh'}
+
+your_dict = {'sharma':'krishna','singh':['tenali','rama']}
+
+utility method support of dictionary
+--------------------------------------------
+dt.pop(key)
+	removes the given key pair and returns value
+
+>>> dt = {x:chr(x+65) for x in range(26)}
+>>> dt
+{0: 'A', 1: 'B', 2: 'C', 3: 'D', 4: 'E', 5: 'F', 6: 'G', 7: 'H', 8: 'I', 9: 'J', 10: 'K', 11: 'L', 12: 'M', 13: 'N', 14: 'O', 15: 'P', 16: 'Q', 17: 'R', 18: 'S', 19: 'T', 20: 'U', 21: 'V', 22: 'W', 23: 'X', 24: 'Y', 25: 'Z'}
+>>> dt.pop(15)
+'P'
+>>> dt
+{0: 'A', 1: 'B', 2: 'C', 3: 'D', 4: 'E', 5: 'F', 6: 'G', 7: 'H', 8: 'I', 9: 'J', 10: 'K', 11: 'L', 12: 'M', 13: 'N', 14: 'O', 16: 'Q', 17: 'R', 18: 'S', 19: 'T', 20: 'U', 21: 'V', 22: 'W', 23: 'X', 24: 'Y', 25: 'Z'}
+>>>
+
+dt.popitem()
+	removes the pair from dictionary's tail and return back in two elements tuple form where 1st 		element is key and other one is value.
+
+>>> dt
+{0: 'A', 1: 'B', 2: 'C', 3: 'D', 4: 'E', 5: 'F', 6: 'G', 7: 'H', 8: 'I', 9: 'J', 10: 'K', 11: 'L', 12: 'M', 13: 'N', 14: 'O', 16: 'Q', 17: 'R', 18: 'S', 19: 'T', 20: 'U', 21: 'V', 22: 'W', 23: 'X', 24: 'Y', 25: 'Z'}
+>>> dt.popitem()
+(25, 'Z')
+>>> dt.popitem()
+(24, 'Y')
+>>> dt.popitem()
+(23, 'X')
+>>> dt.popitem()
+(22, 'W')
+>>> dt
+{0: 'A', 1: 'B', 2: 'C', 3: 'D', 4: 'E', 5: 'F', 6: 'G', 7: 'H', 8: 'I', 9: 'J', 10: 'K', 11: 'L', 12: 'M', 13: 'N', 14: 'O', 16: 'Q', 17: 'R', 18: 'S', 19: 'T', 20: 'U', 21: 'V'}
+>>>
+
+dt.fromkeys(collection of hashable values to be used as keys,single value to be assigned to each pair)
+	creates the new dictionary from scaler values.
+
+>>> new_dt = dt.fromkeys(range(10),"krishna")
+>>> new_dt
+{0: 'krishna', 1: 'krishna', 2: 'krishna', 3: 'krishna', 4: 'krishna', 5: 'krishna', 6: 'krishna', 7: 'krishna', 8: 'krishna', 9: 'krishna'}
+>>>
+
+>>> new_dt = dt.fromkeys(range(10),range(10))
+>>> new_dt
+{0: range(0, 10), 1: range(0, 10), 2: range(0, 10), 3: range(0, 10), 4: range(0, 10), 5: range(0, 10), 6: range(0, 10), 7: range(0, 10), 8: range(0, 10), 9: range(0, 10)}
+>>>
+
+dt.update(another dictionary)
+	updates the called dictionary with the values of given dictionary
+	present pairs values will be replaced
+	new pairs will be added if available in given dictionary.
+
+>>> a = {1:"one",2:'two'}
+>>> b = {2:'krishna',3:'three'}
+>>> a.update(b)
+>>> a
+{1: 'one', 2: 'krishna', 3: 'three'}
+>>>
+6-designing our own data structures.
+
+-PERMANENT DATA STRUCTURES
+	when you need to store your data for perm. purpose.
+
+1-file system
+	when you need to store structured data or unstructured for permanent purpose and security does not matters for you and speed as well
+	
+	students details of a school (500 * 50)
+	
+	
+2-database connectivity
+	when you are required to store structured data only for permanent purpose and security, speed matters for you.
+
+
+3-big data
+	VIDEOS ON YOUTUBE.
+	hadoop.
+	sparkx
+
+FUNCTIONAL OR PROCEDURAL OR STRUCTURAL PROGRAMMING.
+------------------------------------------------------
+
+-shell scripting
+
+print('HELLO WORLD')
+
+
+-functional programming
+
+def main():
+	print('HELLO WORLD')
+
+if __name__ == "__main__":
+	main()
+
+
+-what is a function?
+function is a group of various python statements which are grouped together to achieve the desired goal.
+
+len(collection)
+	returns the number of elements availabe in the given collection.
+
+def length(collection):
+	counter = 0
+	for x in collection:
+		counter += 1
+	return counter
+
+print(length("krishna")) # our own length function
+
+print(len("krishna"))
+
+-types of functions
+
+1-library functions | predefined function | build functions
+	the functions which can directly be used without creating them falls in this category
+
+print()
+input()
+len()
+chr()
+ord()
+help()
+dir()
+filter()
+sorted()
+reversed()
+etc.
+
+filter function
+	this function is used to filter a collection with the help of some given principle.
+
+>>> data = [45,78,52,36,42,77,85]
+>>> even = lambda x:x if x%2 == 0 else None
+>>> filter.__doc__
+'filter(function or None, iterable) --> filter object\n\nReturn an iterator yielding those items of iterable for which function(item)\nis true. If function is None, return the items that are true.'
+>>> result=filter(even,data)
+>>> result
+<filter object at 0x000002209BCF2DF0>
+>>> for x in result:print(x)
+...
+78
+52
+36
+42
+>>>
+
+2-user defined functions
+	these functions are created by the programmer before using them.
+	
+- function without argument without return value
+- function with argument without return value
+- function without argument with return value
+- function with argument and with return value
+
+argument
+	at the time of calling some function if your provide some values to it those values are called argument
+
+len("krishna") # krishna is argument 
+
+return value
+	the value which is returned back by the function after its successfull execution
+
+temp = len("krishna") # the value which will be assigned to temp variable will be the return value.
+
+
+ways to define a function
+
+-instant creation of a function
+	using lamda
+	
+>>> even = lambda x:x if x%2 == 0 else None
+
+-traditional way of creating the function
+
+
+# definition of a function in tranditional way
+def functionname(arg,arg,....):
+	statement1
+	statement2
+	statement3
+	statement4
+	.....
+
+
+a function never gets executed until the call of that function occurs.
+
+load flow of a module that is having functions defintion.
+
+-whenever a module get executed by the main thread which is having some function defnitions into it then main thread will give special treatment to that module. when main thread encounter the def keyword then only for that particular indented block the main thread will perform only syntax check and low level conversion the main thread will not execute that block until it encounters the function call.
+
+function() # this is the call of a function
+
+
+-function without arguments and without return value.
+
+# DEFITION OF A FUNCTION
+def temp():
+	print('THIS IS THE FUNCTION WITHOUT ARGUMENT AND WITHOUT RETURN VALUES.')
+
+
+# CALLING OF FUNCTION
+
+temp()
+
+-function without argument with return value.
+	the functions which returns some value back to your falls in this category
+
+if a function does not returns the value then also the None will be returned by that function automatically
+
+# DEFITION OF A FUNCTION
+def temp():
+	print('THIS IS THE FUNCTION WITHOUT ARGUMENT AND WITHOUT RETURN VALUES.')
+	
+	return 10 # 10 is gonna be returned by this function 
+# CALLING OF FUNCTION
+
+x = 10
+
+print(x)
+
+# return value is that value which is gonna be place exact at that location where the function call was written after evaluation
+
+# print value is that value which is placed onto the screen
+
+a function can return multiple values as well but if you logically only a single value can be returned by a function.
+
+if you ever try to return multiple values from a function then that function will pack those values into a tuple and return that tuple.
+
+# DEFITION OF A FUNCTION
+def temp():
+	print('THIS IS THE FUNCTION WITHOUT ARGUMENT AND WITHOUT RETURN VALUES.')
+	
+	return 10,20,30 # CALLING OF FUNCTION
+
+x = temp()
+
+print(x)`
+---------------------------------------------------------------------------------------------
+import os
+#os.system("pip install requests")
+
+import requests
+data = requests.get("https://bit.ly/uforeports").text
+
+final_data = [x.split(",") for x in data.splitlines()]
+
+print(final_data)
+##############################################################
+
+# find how many ufo's were reported in each year
+
+# what was the color and shape of most frequently reported ufo.
+
+# count the frequency of ufo's reported state wise.
+
+# count the missings values for each column
+
+# add a new column for full names of each state.
+
+NY - NEW YORK
+
+# count number of cities in each state.
+
+# add new column in which only four values will be there repeatedly morning,afternoon,evening and night indicating that ufo's was reported in which of day.
+
+# in which cycle of day most of the ufo's were reported.
+
+
+-functions with argument and without return value.
+
+def temp(a,b): # positional arguments
+	print('ARGUMENTS RECEIVED')
+
+temp(10,20)
+
+-> types of arguments
+
+-positional arguments
+	these arguments are must to provide.
+	the values are assigned to variables on the basis of their positions that is why it is called positional arguments.
+
+def temp(a,b): # positional arguments
+	print('ARGUMENTS RECEIVED')
+
+temp(10,20)
+
+-keywords arguments
+	it is a way to provide value to argument variables without help of their positions you can directly tell python that 	which value you wish to assign to which variable.
+
+def temp(a,b): # positional arguments
+	print('ARGUMENTS RECEIVED')
+	print(f"a -> {a}",f"b -> {b}",sep="\n")
+
+temp(b = 10,a = 20) # keyword argument
+	
+	while dealing with keyword arguments make sure no positional arugment follows the keyword argument.
+
+def temp(a,b): # positional arguments
+	print('ARGUMENTS RECEIVED')
+	print(f"a -> {a}",f"b -> {b}",sep="\n")
+
+temp(b = 10,20) # keyword argument
+	
+	make sure while mixing the keyword and positional arguments no argument variable gets the multiple values.
+
+def temp(a,b): # positional arguments
+	print('ARGUMENTS RECEIVED')
+	print(f"a -> {a}",f"b -> {b}",sep="\n")
+
+temp(20,a = 10) # keyword argument
+
+
+def temp(a,b): # positional arguments
+	print('ARGUMENTS RECEIVED')
+	print(f"a -> {a}",f"b -> {b}",sep="\n")
+
+temp(20,b = 10) # keyword argument
+
+-default arguments
+	these arguments are provided at the time of definition of any function to make some arguments optional.
+
+def temp(a,b=10): #a- positional b-default arguments
+	print('ARGUMENTS RECEIVED')
+	print(f"a -> {a}",f"b -> {b}",sep="\n")
+
+temp(20,2500)
+ 
+	you have to maintain those two rules that you were maintaining while dealing with keyword arguments.
+	
+	-no positional argument follow the default argument
+	-no variables get multiple values
+
+-keywords only argument
+	if you wish to force your function caller to provide value for some argument variable by using only keyword 	argument method then you can use it
+
+def temp(x,*,a,b):
+	print(x,a,b,sep="|")
+
+temp(10,a=45,b=56)
+
+-positional only arguments
+	to have only positional arguments for some argument variables
+	no keywrod only argument and default argument should be written before positional only argument
+
+def temp(x,/,a,b):
+	print(x,a,b,sep="|")
+
+temp(x=10,a=45,b=56)	
+	
+-args
+	if you wish to be flexible with n numbers of positional arguments
+	all the positional arguments given by the user will be stored inside a tuple.
+
+def temp(*x):
+	print(x)
+
+temp(1,2,3,4,5,6,7,78,9,56,56)
+
+-kwargs
+	if you wish to be flexible with n numbers of keyword arguments
+	all the keyword arguments given by the user will be stored inside a dictionary.
+
+def temp(**x):
+	print(x)
+
+temp(A="KRISHNA",b=45,c=78)
+
+	
+inner functions
+------------------
+a function defined inside some other function.
+these functions are only accessible with that particular function in which they are created.
+
+def outer():
+	def inner():
+		print('HELLO WORLD ')
+	inner()
+
+outer()
+
+inner() # error
+
+decorators
+-------------
+these are special type of functions which gets invoked automatically whenever its associated function gets invoked
+a decorator is used to modify the implementation of a function without touching its definition.
+
+the associated function is automatically passed as argument to the decorator so decorator must accept a function as argument
+
+the decorator must return a function as its return value.
+
+def decorator(func):
+	print('DECORATOR EXECUTED')
+	return func
+
+@decorator
+def temp():
+	print('THIS IS TEMP FUNCTION')
+
+temp()
+
+F:\New folder\batches\weekdays 5 pm\functionalprogramming>python demo.py
+DECORATOR EXECUTED
+THIS IS TEMP FUNCTION
+
+login = True
+
+def checklogin(func):
+	def inner():
+		if login:
+			return func()
+		else:
+			dologin()
+			buy()
+	return inner
+def dologin():
+	global login
+	login = True
+	print('LOGIN SUCCESS')
+
+@checklogin
+def buy():
+	print('YOU ARE BUYING  A PROJDUCT')
+
+buy()
+
+read entire article and solve the questions.
+
+https://www.w3resource.com/python-exercises/python-functions-exercise-17.php
+
+GENERATOR FUNCTIONS
+----------------------------
+this function is used to generate a generator.
+
+if you ever need to deal with very huge collection of something but you need to access its elements one after one then storing them all together will not be recommended.
+
+def weekdays():
+	ls = ['MON','TUE','WED','THUR','FRI','SAT','SUN']
+	for x in ls:
+yield x
+
+
+wd = weekdays()
+
+
+wd = weekdays()
+
+print(wd)
+
+print(next(wd))
+print(next(wd))
+print(next(wd))
+print(next(wd))
+print(next(wd))
+print(next(wd))
+print(next(wd))
+
+wd = weekdays() # reset the generator
+print(next(wd)) # stop iteration error
+
+
+
+
+
+
+def weekdays():
+	ls = ['MON','TUE','WED','THUR','FRI','SAT','SUN']
+	for x in range(len(ls)-1):
+		yield ls[x],ls[x+1]
+
+
+
+recursive funcitons
+------------------------
+a function calling itself.
+
+stop the stack from overflow.  
+
+def havenumber():
+	var = input('ENTER NUMBER ONLY PLEASE : ')
+	if var.isdigit():
+		return var
+	else:
+		return havenumber()
+
+
+data = havenumber()
+
+print(data)
+
+#currency
+
+def amount(x):
+	if x > 2000:
+		print(f"2000 -> {x//2000}")
+		amount(x%2000)
+	elif x > 500:
+		print(f"500 -> {x//500}")
+		amount(x%500)
+	elif x > 100:
+		print(f"100 -> {x//100}")
+		amount(x%100)
+	else:
+		print(f"remaining -> {x}")
+
+amount(45700)
+
+
+1 management system.                            
+
+MODULE PROGRAMMING.
+------------------------------
+python modules
+	every saved file of python is called a module.
+
+python packages
+	a folder containing various python modules is considered as python package.
+
+
+THINGS REQUIRED TO DEAL WITH PACKAGES AND MODULES.
+
+import
+	to import something or entire module or package or from package or module.
+
+	majorly it is used for bulk import operation
+
+>>> x = 10
+>>> import sys
+>>> sys.getsizeof(x)/8
+3.5
+>>>
+
+>>> import sys as system
+>>> system.argv
+['']
+>>>
+
+>>> import os.path
+>>> import os.path as p
+>>> p
+<module 'ntpath' from 'C:\\python\\lib\\ntpath.py'>
+>>>
+
+from
+	helps you to import specific things from some package or module.
+
+>>> from sys import argv
+>>> argv
+['']
+
+>>> from sys import argv,getsizeof
+>>> from sys import argv as cmdvalues
+>>> cmdvalues
+['']
+>>> from os import (
+...     getcwd as cwd,
+...     mkdir as md,
+...     rmdir as rd
+... )
+>>> cwd()
+'F:\\New folder\\batches\\weekdays 5 pm\\module programming'
+>>> md
+<built-in function mkdir>
+>>> rd
+<built-in function rmdir>
+>>>
+
+
+as
+	it for renaming the things while importing.
+
+
+()
+
+
+-in-build | library | pre-defined packages and modules
+	these modules or packages are the part of python installation you already have all 	these modules and packages available but you will have to import them before 	using.
+
+os
+	every task that your perform with your operating system
+
+os.mkdir("folder name")
+	creates a folder
+
+os.rmdir("folder name")
+	deletes the folder
+
+os.getcwd()
+	returns the currect working directory path.
+os.startfile(location)
+	runs the executable file location.
+os.walk(location) -> generator
+	tells you about the files and folder available at given location.
+
+# have a location from user and then tell user that how many folder, python module, text file and other files are there.
+
+# have a name of file and a path then look for all the files containing that name or having name at given path and then offer the user a menu to pick which file to launch and then launch the file picked by user.
+
+os.system('any command of dos')
+	this function allows you to execute any command of dos using python code.
+
+# a path from user and then create three new folder "python modules","l file","unknown files"
+
+python modules will be having all the python modules available at given location 
+and do the same for text files and unknown files.
+
+os.path.join(path,path,path,.......)
+	joins the all given paths together
+>>> os.path
+<module 'ntpath' from 'C:\\python\\lib\\ntpath.py'>
+>>> os.path.join(os.getcwd(),"krishna","harekrishna")
+'F:\\New folder\\batches\\weekdays 5 pm\\module programming\\krishna\\harekrishna'
+>>>
+
+the re module
+
+regex
+	regular expressions are used to find some pattern in a string.
+
+things required to write your own regex.
+
+abc		-		abc in same case and exactly same times
+[abc]		-		a or b or c only once
+[a-z]		-		any character from a to z only once
+[A-Z]		-		any character from A to Z only once
+[0-9]		-		any digit only once
+[^abc]		-		except a or b or c it will match with anything
+[^a-zA-Z0-9 ]	-		all symbols but only once	
+
+OPERATORS
+
+|		-		or
+.		-		character including numbers
+^abc		-		starts with
+xyz$		-		ends with
+\		-		functionality remover
+()		-		define parts
+
+QUANTIFIERS
+
+a		-		same a exactly once
+a+		-		one or more repeatation
+a*		-		zero or more repeatation
+a?		-		a exactly once or zero times
+a{n}		-		a n times
+a{n,m}		-		a minimum n times maximum m times
+
+-regex to match with a string that must start with "the" and ends with "dog." and in between can contain anything
+
+"^the.+dog\.$"
+
+import re
+regex = "^the.+dog\.$"
+data = "the quick brown fox jumps over the little lazy dog."
+
+found = re.search(regex,data) # if foundt then matcher object is returned else None is returned
+
+if found:
+	print('MATCH FOUND')
+	#print(found)
+	#print(dir(found))
+	print('STARTING : ',found.start())
+	print('ENDING : ',found.end())
+	print('STRING : ',found.group())
+else:
+	print('NO MATCH FOUND')
+
+-regex to match all python identifiers
+
+1-it should not start with a number
+2-it can not container any special symbol other then _ underscore.
+
+[a-zA-Z_][0-9A-Za-z_]*
+
+-regex to match all the indian phone numbers
+
+1-+91 at begining
+2-then can contain 6,7,8,9
+3-then can contain 0-9 exactly 9 times
+
+
+\+91[6-9][0-9]{9}
+
+import re
+regex = "\+91[6-9][0-9]{9}"
+data = "the +917065120911 +924578945616 +919988775544 dog."
+
+found = re.findall(regex,data) # returns the list of all found matches else blank list will be returned
+
+
+if found:
+	print('MATCH FOUND')
+	print(found)
+else:
+	print('NO MATCH FOUND')
+
+
+-regex to match a valid email address.
+
+1-alphabets and numbers are allowed as its first character
+2-then can contain alphabets + numbers + _ + .
+3-constant @
+4-only alphabets min 4 max 15 length
+5-constant .
+6-alphabets min 2 max 5
+
+[a-zA-Z0-9][a-zA-Z0-9_\.]+@[a-zA-Z]{4,15}\.[a-zA-Z]{2,5}
+
+import re
+
+regex = "[a-zA-Z0-9][a-zA-Z0-9_\.]+@[a-zA-Z]{4,15}\.[a-zA-Z]{2,5}"
+data = "the +917065120911 mailmeastushar@gmail.com +919988775544 dog."
+
+found = re.findall(regex,data) # returns the list of all found matches else blank list will be returned
+
+
+if found:
+	print('MATCH FOUND')
+	print(found)
+else:
+	print('NO MATCH FOUND')
+
+#extract all the dates and time seperately.
+
+#extract only alphabetical data from each line.
+
+-third party packages and modules
+	these modules and package are also prely-created but you will have to download  them first with the help of pip or easy_install or some manager of python and then 	only you will be able to import them and use them.
+
+-user defined packages and modules.
+	these modules and packages are created by the programmer before using.
+
+OBJECT ORIENTED PROGRAMMING. (OOPS)
+	development
+
+-encapsulation
+	wrapping of data or variables with their operating methods or functions
+	in python encapsulation can be achieved with the help of classes.
+
+1-normal class
+
+what is a class ?
+	class is just a blueprint for future construction.
+
+what is an object?
+	the result which is achieved by following the blueprint.
+
+def mystaticmethod(func):
+	def inner(self,*args,**kwargs):
+		return func(*args,**kwargs)
+	return func
+
+class MyClass:
+	"""
+		documenational string
+	"""
+	var = 10 # static variable
+	def __init__(self):		# constructor
+		MyClass.var = 20 # static variable
+		self.var = 10 # instance variable
+	def instanceMethod(self):
+		print(id(self))
+		MyClass.var = 30 # static variable
+		self.var = 20 # instance variable
+	@mystaticmethod
+	def staticMethod():
+		MyClass.var = 40 # static variable
+		print('STATIC METHOD')
+	@classmethod
+	def classMethod(cls):
+		MyClass.var = 50 # static variable
+		cls.var = 60 # static variable
+	def __del__(self):
+		pass
+MyClass.var = 70 # static variable
+obj = MyClass()
+obj.var = 30 # instance variable
+obj1 = MyClass()
+obj1.var = "krishna"
+print(obj.var) # 30
+print(obj1.var) # krishna
+obj.staticMethod()
+print(id(obj))
+
+2-inner class
+	a class defined inside some other class is considered as inner class.
+	
+
+class Bank:
+	def __init__(self,name,address):
+		self.name = name
+		self.address = address
+	
+	class Savings:
+		account_series = 100000000001
+		def __init__(self,name,address,amount):
+			self.name = name
+			self.address = address
+			self.__balance = amount
+			Bank.Savings.account_series += 1
+			self.ac = Bank.Savings.account_series
+		def deposit(self,amount):
+			self.__balance += amount
+			self.balanceEnq()
+
+		def withdraw(self,amount):	
+			if amount > self.__balance:
+				return f"you can not withdraw {amount:,}"
+			else:
+				self.__balance -= amount
+				self.balanceEnq()
+				
+		def balanceEnq(self):
+			print('BALANCE IS :',self.__balance)
+			return self.__balance
+
+	class Current:pass
+	class FixedDeposit:pass
+
+krishna = Bank('krishna','rohini')
+#print(dir(krishna))
+
+krishna.account = krishna.Savings('krishna','rohini',45000)
+#print(dir(krishna.account))
+krishna.account.deposit(45000)
+krishna.account.withdraw(1200)
+
+
+
+3-super class
+4-sub class
+5-abstract class
+
+-inheritance
+	it is the parent child relationship where things of parent can be used by child but 	things of child can't be touched by parent.
+
+	in python it is in your hands that which thing you wish to share with your child.
+
+
+1-simple
+	a single class tries to borrow the attributes of some other class.
+
+	A (SUPER CLASS | PARENT CLASS)
+	|
+	|
+	*
+	B (SUB CLASS | CHILD CLASS)
+
+class Parent:
+	static_variable = "this is static variable"
+	def __init__(self):
+		self.instance_variable = "this is instance variable"
+	
+	def instanceMethod(self):
+		print('THIS IS INSTANCE MEHTOD OF PARENT')
+	@staticmethod
+	def staticMethod(self):
+		print('THIS IS STATIC METHOD OF PARENT')
+	@classmethod
+	def classMethod(cls):
+		print('THIS IS CLASS METHOD OF PARENT.')
+
+class Child(Parent):pass
+
+c = Child()
+print(c.instance_variable)
+#print(help(c))
+print(dir(c))
+
+2-multiple
+	a single class tries to borrow the attributes from more than one classes.
+
+	A	B
+	  \          /
+	   \       /
+	    \    /
+	     \ /
+	      *
+	     C
+
+class Parent1:
+	def method(self):
+		print('METHOD OF PARENT 1')
+
+class Parent2:
+	def method(self):
+		print('METHOD OF PARENT 2')
+	def newmethod(self):
+		print('NEW METHOD OF PARENT 2')
+
+
+class Child(Parent1,Parent2):pass
+
+c = Child()
+
+c.method()
+
+
+3-multi-level
+
+	a class borrows the attributes from a class and another class borrow the attributes 	from that class
+	
+	A
+	|
+	*
+	B
+	|
+	*
+	C
+	
+	B = A
+	C = C + B + A
+	
+class A:
+	def method(self):
+		print('METHOD OF A')
+
+class B(A):
+	def method(self):
+		print('METHOD OF B')
+	def newmethod(self):
+		print('NEW METHOD OF B')
+	def callMethod(self):
+		super().method()
+
+class C(B):
+	def method(self):
+		print('METHOD OF C')
+	
+	
+c = C()
+
+
+if you prefix __ with any attribute of class then that attribute will become private and private members of class never participate in inheritance
+	
+
+TYPES OF CONSTRUCTORS
+------------------------------
+default constructor
+	these constructors are created by the pvm automatically if you do not create any 	constructor inside your class.
+-normal class
+	def __init__(self):pass
+
+-sub class
+	def __init__(self):
+		super().__init__()
+
+CONSTRUCTOR CHAINING
+------------------------------
+whenever we perform inheritance and if you do not create the constructor inside sub class then pvm will create a constructor which will be calling internally the parent constructor and this is called constructor chaining and if constructor chaining is not performed in inheritance then no instance variables will be shared in inheritance.
+
+super() -> represents the super class object
+
+ ---------------------------------------------
+OBJECT ORIENTED PROGRAMMING. (OOPS)
+	development
+
+-encapsulation
+	wrapping of data or variables with their operating methods or functions
+	in python encapsulation can be achienved with the help of classes.
+
+1-normal class
+
+what is a class ?
+	class is just a blueprint for future construction.
+
+what is an object?
+	the result which is achieved by following the blueprint.
+
+def mystaticmethod(func):
+	def inner(self,*args,**kwargs):
+		return func(*args,**kwargs)
+	return func
+
+class MyClass:
+	"""
+		documenational string
+	"""
+	var = 10 # static variable
+	def __init__(self):		# constructor
+		MyClass.var = 20 # static variable
+		self.var = 10 # instance variable
+	def instanceMethod(self):
+		print(id(self))
+		MyClass.var = 30 # static variable
+		self.var = 20 # instance variable
+	@mystaticmethod
+	def staticMethod():
+		MyClass.var = 40 # static variable
+		print('STATIC METHOD')
+	@classmethod
+	def classMethod(cls):
+		MyClass.var = 50 # static variable
+		cls.var = 60 # static variable
+	def __del__(self):
+		pass
+MyClass.var = 70 # static variable
+obj = MyClass()
+obj.var = 30 # instance variable
+obj1 = MyClass()
+obj1.var = "krishna"
+print(obj.var) # 30
+print(obj1.var) # krishna
+obj.staticMethod()
+print(id(obj))
+
+#DOCUMENATIONAL STRING
+	the string which python's help function is going to use to help the user of your 		class.
+
+#CONSTRUCTOR - MAGIC METHOD
+	this is the only method available inside the class defaultly which is responsible to 	initialize the newly created object.
+
+#INSTANCE METHODS
+	these methods are designed to deal with instance variable.
+	
+#STATIC METHODS
+	these methods are just available inside the class but they are not natively created 	to deal with static variables they can have their own arguments and produce the 	result with the help of those argument.
+
+#CLASS METHODS
+	these methods are designed to deal with static variables.
+
+# INSTANCE VARIABLE | OBJECT LEVEL VARIABLE
+	the variables which's value is different for every object.
+	
+# STATIC VARIABLES | CLASS LEVEL VARIABLE
+	the variables which's value is same for every object of class.
+
+# THE SELF VARIABLE
+	whenever you call any method of class the python automatically passes the value 	of your object positionally to the method as its first positional argument.
+
+# CLS VARIABLE
+	it re-presents the current class.
+
+2-inner class
+	a class defined inside some other class is considered as inner class.
+	
+
+class Bank:
+	def __init__(self,name,address):
+		self.name = name
+		self.address = address
+	
+	class Savings:
+		account_series = 100000000001
+		def __init__(self,name,address,amount):
+			self.name = name
+			self.address = address
+			self.__balance = amount
+			Bank.Savings.account_series += 1
+			self.ac = Bank.Savings.account_series
+		def deposit(self,amount):
+			self.__balance += amount
+			self.balanceEnq()
+
+		def withdraw(self,amount):	
+			if amount > self.__balance:
+				return f"you can not withdraw {amount:,}"
+			else:
+				self.__balance -= amount
+				self.balanceEnq()
+				
+		def balanceEnq(self):
+			print('BALANCE IS :',self.__balance)
+			return self.__balance
+
+	class Current:pass
+	class FixedDeposit:pass
+
+krishna = Bank('krishna','rohini')
+#print(dir(krishna))
+
+krishna.account = krishna.Savings('krishna','rohini',45000)
+#print(dir(krishna.account))
+krishna.account.deposit(45000)
+krishna.account.withdraw(1200)
+
+
+
+3-super class
+4-sub class
+
+5-abstract class
+	this class behaves like a supervisor for other classes
+	an abstract class defines a set of rules to be followed by its all children if any of its 	child disagree to follow any rule defined by this class then that child will never be 	able to create its object.
+	
+	a valid abstract class must contain at least one abstract method defined into it.
+
+	an abstract class can contain non-abstract methods as well.
+	
+	a valid abstract class can never create its object.
+
+	all the children of an abstract class must override all abstract methods defined by 		abstract class.
+
+	
+what is an abstract method?
+	a method with 0 definition
+	a method without body
+	a method without implementation.
+
+	denoted with the @abstractmethod decorator
+
+
+from abc import ABC,abstractmethod
+
+# by creating parent child relation we are saying that this is an abstract class.
+
+class Education(ABC):
+	@abstractmethod
+	def read(self):pass
+	
+	@abstractmethod
+	def write(self):pass
+
+
+class BTech(Education): # this will now be able to create its objects.
+	def read(self):
+		return "PCM"
+	def write(self):
+		return "Code"
+class BA(Education):pass
+
+class BBA(Education):pass
+
+bt = BTech()
+
+
+
+-inheritance
+	it is the parent child relationship where things of parent can be used by child but 	things of child can't be touched by parent.
+
+	in python it is in your hands that which thing you wish to share with your child.
+
+
+1-simple
+	a single class tries to borrow the attributes of some other class.
+
+	A (SUPER CLASS | PARENT CLASS)
+	|
+	|
+	*
+	B (SUB CLASS | CHILD CLASS)
+
+class Parent:
+	static_variable = "this is static variable"
+	def __init__(self):
+		self.instance_variable = "this is instance variable"
+	
+	def instanceMethod(self):
+		print('THIS IS INSTANCE MEHTOD OF PARENT')
+	@staticmethod
+	def staticMethod(self):
+		print('THIS IS STATIC METHOD OF PARENT')
+	@classmethod
+	def classMethod(cls):
+		print('THIS IS CLASS METHOD OF PARENT.')
+
+class Child(Parent):pass
+
+c = Child()
+print(c.instance_variable)
+#print(help(c))
+print(dir(c))
+
+2-multiple
+	a single class tries to borrow the attributes from more than one classes.
+
+	A	B
+	  \          /
+	   \       /
+	    \    /
+	     \ /
+	      *
+	     C
+
+class Parent1:
+	def method(self):
+		print('METHOD OF PARENT 1')
+
+class Parent2:
+	def method(self):
+		print('METHOD OF PARENT 2')
+	def newmethod(self):
+		print('NEW METHOD OF PARENT 2')
+
+
+class Child(Parent1,Parent2):pass
+
+c = Child()
+
+c.method()
+
+
+3-multi-level
+
+	a class borrows the attributes from a class and another class borrow the attributes 	from that class
+	
+	A
+	|
+	*
+	B
+	|
+	*
+	C
+	
+	B = A
+	C = C + B + A
+	
+class A:
+	def method(self):
+		print('METHOD OF A')
+
+class B(A):
+	def method(self):
+		print('METHOD OF B')
+	def newmethod(self):
+		print('NEW METHOD OF B')
+	def callMethod(self):
+		super().method()
+
+class C(B):
+	def method(self):
+		print('METHOD OF C')
+	
+	
+c = C()
+
+
+if you prefix __ with any attribute of class then that attribute will become private and private members of class never participate in inheritance
+	
+
+TYPES OF CONSTRUCTORS
+------------------------------
+default constructor
+	these constructors are created by the pvm automatically if you do not create any 	constructor inside your class.
+-normal class
+	def __init__(self):pass
+
+-sub class
+	def __init__(self):
+		super().__init__()
+
+CONSTRUCTOR CHAINING
+------------------------------
+whenever we perform inheritance and if you do not create the constructor inside sub class then pvm will create a constructor which will be calling internally the parent constructor and this is called constructor chaining and if constructor chaining is not performed in inheritance then no instance variables will be shared in inheritance.
+
+super() -> represents the super class object
+
+  
+
+-polymorphism
+
+a boy starts the relationship with word friendship but the girl ends the relationship with same word.
+
+one thing having more than one meanings can be considered as polymorphism
+
+10 + 20 = 30 # addition
+
+"hare krishna" + "hare rama" = "hare krishnahare rama" # concatenation
+
+
+-compile time poly | early binding | method overloading
+	in a same class if more than one methods are having same name even if they are 	having different types or number of argument those methods are said to be 	overloaded.
+	
+	python does not support method overloading.
+	if you define more than one method with same name then python will recognize 	only lastly defined method.
+
+class Demo:
+	def add(self,a,b):
+		return a+b
+	
+	def add(self,a,b,c):
+		return a+b+c
+	
+d = Demo()
+
+print(d.add(10,20))
+
+F:\New folder\batches\weekdays 5 pm\oops>python demo1.py
+Traceback (most recent call last):
+  File "F:\New folder\batches\weekdays 5 pm\oops\demo1.py", line 10, in <module>
+    print(d.add(10,20))
+TypeError: add() missing 1 required positional argument: 'c'
+
+
+-run time poly. | late binding | method overriding.
+	in inheritance if a child is not satisfied with parent given attributes then child can 	redefine those attributes just for itself.
+
+class Demo:
+	def add(self,a,b): # signature  add(obj,obj)
+		return a+b
+	
+class Child(Demo):
+	# override
+	def add(self,*args):
+		return sum(args)
+
+c = Child()
+
+print(c.add(10,20,30,40,50,60))
+
+OPERATOR OVERLOADING
+class Demo:
+	def add(self,a,b): # signature  add(obj,obj)
+		return a+b
+	# override
+	def __add__(self,operand):
+		return self.value + operand.value
+	def __iter__(self):
+		return (x for x in range(10))
+"""
+__sub__
+__mul__
+__div__
+__floor__
+__iadd__
+__mod__
+
+"""
+class Child(Demo):
+	def add(self,*args):
+		return sum(args)
+
+c = Child()
+c.value = 10 # instance variable
+
+d = Demo()
+d.value = 45 # instance variable
+print(c.add(10,20,30,40,50,60))
+print(c+d)
+print(c.__add__(d))
+print(d+c)
+print(d.__add__(c))
+print(max(c))
+
+
+
+
+
+
+
+
+
+
+
+PYTHON DATABASE COMMUNICATION
+---------------------------------------------
+
+-steps to communicate with database
+
+1- install database specific module.
+	mysql	-> pip install pymysql | pip install mysql-connector
+	oracle	-> pip install cx_oracle
+	sqlite3	-> default sqlite3
+	
+2- keep database in running state.
+
+3- create the connection
+	import dbmodule as sq
+	#local database
+	conn = sq.connect("absolute path to local db file")
+	#server | cloud
+	conn = sq.connect(
+		user="username",
+		password = "password",
+		port = port
+		dbname = "database"
+	)
+
+4- create cursor
+	cur = conn.cursor()
+
+5- perform the operation
+	cur.execute('your query')
+	cur.executemany('your query with param.')
+	
+6- if something went wrong during 5th step then rollback to lastly known state
+	conn.rollback()
+	
+7- if create,update or delete operation was performed in 5th step then commit the changes
+	conn.commit()
+
+8- if read operation was performed in 5th step then unpack the result.
+	cur.fetchone()
+	cur.fetchmany(n)
+	cur.fetchall()
+
+9- kill the cursor
+	cur.close()
+
+10- kill the connection
+	conn.close()
+
+
+
+create_table = """
+	CREATE TABLE IF NOT EXISTS {table_name}(
+		id INTEGER NOT NULL PRIMARY KEY,
+		name TEXT,
+		surname TEXT,
+		contact TEXT
+	)
+"""
+insert_data = """
+	INSERT INTO {table_name}(
+		name,
+		surname,
+		contact	
+	) VALUES (
+		'{name}',
+		'{surname}',
+		'{contact}'	
+	)
+"""
+read_particular = """
+	SELECT * FROM {table_name} WHERE {property} = '{value}'	
+"""
+
+read_data = """
+	SELECT * FROM {table_name}
+"""
+
+##################GENERATING RANDOM DATA ##########################
+from random import choice
+names = "ABCDEFGHIJKLMNOPQRSTUVWXYZ"
+numbers = [x for x in range(9800000000,9800000050)]
+
+################### COMMUNICATING WITH LOCAL DB ####################
+
+#1 install and import the database specific module.
+import sqlite3 as sq
+
+#2 keep database in running (create connection db will be created automatically.)
+
+#3 create the connection
+conn = None
+cur = None
+
+try:
+	conn = sq.connect("database.db")
+	#4 create cursor
+	cur = conn.cursor()
+except Exception as e:
+	print('SOMETHING WENT WRONG DURING THE CURSOR CREATION.')
+	print(e)
+else:
+	print('CONNECTION AND CURSOR CREATED.')
+	#5 PERFORM THE OPERATION
+	try:
+		##### CREATING TABLE #######
+		#cur.execute(create_table.format_map(dict(table_name = "PERSON_DETAILS")))
+		# 7 commit the changes
+		#### INSERTING DATA #########
+		"""for x in range(20):
+			cur.execute(
+				insert_data.format_map(
+					dict(
+						table_name=  "PERSON_DETAILS",
+						name = choice(names),
+						surname = choice(names),
+						contact = choice(numbers)
+					)
+				)
+			)
+		conn.commit()"""
+		###### READING DATA FROM TABLE #######
+		"""cur.execute(
+			read_particular.format_map(
+				dict(
+					table_name = "PERSON_DETAILS",
+					property = "name",
+					value = "B"
+				)
+			)	
+		)"""
+		cur.execute(
+			read_data.format_map(
+				dict(
+					table_name = "PERSON_DETAILS"
+				)
+			)	
+		)
+	except Exception as e:
+		print('SOMETHING WENT DURING TABLE CREATION')
+		print(e)
+		#6 rollback to last known state
+		conn.rollback()
+	else:
+		#print('TABLE CREATED')
+		#print('DATA INSERTED')
+		# 8 UNPACK THE RESULT.
+		print(cur.fetchone(),end="****************************************")
+		print(cur.fetchmany(10),end="-----------------------------------")
+		print(cur.fetchall())
+finally:
+	# 9 and 10 close the cursor and connection
+	if cur:cur.close()
+	if conn:conn.close()
+
+
+-----------------------------------------------------
+MULTI-TASKING.
+------------------------
+performing more than one task at a same time is called multi-tasking
+
+
+-process based | os engineer
+	running multiple things on a same platform which are independent.
+
+
+-thread based
+	running multiple functions or method or features of a single application at same 	time.
+
+What is a Thread ?
+	in python thread is the object of a class threading.Thread which is responsible to 	execute our entire module of python.
+	
+	thread is just the flow of execution.
+	
+	
+Types of Thread
+
+-Normal Thread
+	this thread responsiblity is to just finish the assigned task.
+
+-Daemon Thread
+	the responsiblity of this type of thread is to assist the normal thread.
+
+Getting started with threading module
+
+import thread as th
+
+th.active_count()
+	returns the number of active threads
+th.enumerate()
+	returns the list of all active thread objects
+th.current_thread()
+	returns the object of executing thread.
+
+thread = th.current_thread()
+
+thread.name
+thread.getName()
+	returns the name of thread
+
+thread.setName("str")
+	changes the name of thread
+
+thread.ident
+	contains the special identification number of thread
+
+thread.is_alive()
+thread.isAlive()
+	checks that thread is alive or not.
+
+thread.isDaemon()
+	checks that thread is of daemon nature or not.
+
+thread.setDaemon(bool)
+	changes the nature of thread
+	nature chaning is only possible if the thread is in born or ready state.
+
+thread.join()
+	makes the executing thread to wait till the current thread terminates.
+
+import threading as th
+print('TOTAL ACTIVE THREADS : ',th.active_count())
+print('OBJECTS OF ACTIVE THREADS : ',th.enumerate())
+thread = th.current_thread()
+print('CURRENT THREAD OBJECT : ',thread)
+print('NAME : ',thread.name,thread.getName())
+thread.setName("krishnaThread")
+print('NAME : ',thread.name,thread.getName())
+print("IDENTIFICATION NUMBER : ",thread.ident)
+print("IS ALIVE : ",thread.is_alive())
+print('IS DAEMON : ',thread.isDaemon())
+#thread.setDaemon(True)
+thread.join()
+
+
+
+Ways to Create the Threads
+	inside threading module there is a class named Thread and every object or child or 	child's object will be considered as a thread.	
+
+-without inheritance
+	you can only assign a single method or function as the task of thread.
+
+import threading as th
+def demo(x,y):
+	for x in range(5):
+		print(f"executed by : {th.current_thread().name}")
+#creating the thread
+t1 = th.Thread(			# born state
+	name="Krishna-Thread",
+	target = demo,		# ready state
+	#args = (10,20)
+	kwargs = {'x':10,'y':20}
+)
+t1.start()				# active state
+t1.join()				# main thread will get in waiting state.
+for x in range(5):
+	print(f"executed by : {th.current_thread().name}")
+
+--------------------------------------------------------------------------
+
+import threading as th
+class Demo:
+	def demo(self,x,y):
+		for x in range(5):
+			print(f"executed by : {th.current_thread().name}")
+
+#creating the thread - bound
+d = Demo()
+t1 = th.Thread(			# born state
+	name="Krishna-Thread",
+	target = d.demo,		# ready state
+	#args = (10,20)
+	kwargs = {'x':10,'y':20}
+)
+#creating the thread - unbound
+t2 = th.Thread(
+	name = "Rama-Thread",
+	target = Demo.demo,
+	args = (Demo(),10,20),
+)
+t1.start()
+t2.start()				# active state
+print(f"{th.active_count()}".center(50,"*"))
+for x in range(5):
+	print(f"executed by : {th.current_thread().name}")
+
+
+-with inheritance
+	you will have to override the run method if you are creating the thread using this 	way if you don't do it then that thread will always be in born state.
+
+import threading as th
+
+class Demo(th.Thread):
+	def __init__(self,*args,**kwargs):
+		super().__init__(*args,**kwargs)
+	def demo(self):
+		for x in range(5):
+			print(f"executed by : {th.current_thread().name}")	
+	def demo1(self):
+		for x in range(5):
+			print(f"executed by in demo 1 : {th.current_thread().name}")
+	def run(self):
+		self.demo()
+		self.demo1()
+
+d1 = Demo(name = "krishna thread")
+d1.start()
+
+****whenever you need to execute the multiple functions or methods at same time if they are not dependent on each other any how. ****
+
+Inter-Thread Communication
+---------------------------------
+sometimes threads may have to share the status of each other with each other so that other dependent threads can continue their execution.
+
+threading module has a class defined init name Event which lets you perform the interthread communication very easily.
+
+the even class defines the following methods
+
+obj = Event()
+
+obj.set()
+	sets the event so all the waiting threads will be informed to continue their 	execution
+
+obj.wait()
+	whichever thread executes this method will have to wait until the call of obj.set() 	method on that same event object by some other thread.
+
+obj.clear()
+	wipes the event status.
+
+
+import threading as th
+train_event = th.Event()
+class IndianRailways(th.Thread):
+	def __init__(self,*args,**kwargs):
+		super().__init__(*args,**kwargs)
+	def setTrainSchedule(self):
+		print('SETTING TRAIN SCHEDULE')
+		train_event.set()
+	def run(self):
+		self.setTrainSchedule()
+
+class MakeMyTrip(IndianRailways):
+	def bookTicket(self):
+		print('WAITING FOR TRAIN SCHEDULE TO BE SET : ',th.current_thread().name)
+		train_event.wait()
+		print('BOOKING THE TICKET USING MAKE MY TRIP')
+	def run(self):
+		self.bookTicket()
+
+class GoIbibo(IndianRailways):
+	def bookTicket(self):
+		print('WAITING FOR TRAIN SCHEDULE TO BE SET : ',th.current_thread().name)	
+		train_event.wait()
+		print('BOOKING THE TICKET USING GO IBIBO')
+	def run(self):
+		self.bookTicket()
+
+mmt = MakeMyTrip(name="mmt-thread")
+gi = GoIbibo(name = "gi-thread")
+ir = IndianRailways(name="ir-thread")
+
+mmt.start()
+gi.start()
+ir.start()
+
+
+
+F:\New folder\batches\weekdays 5 pm\multiprocessing>python demo.py
+OS MODULE LOADED
+WAITING FOR TRAIN SCHEDULE TO BE SET :  mmt-thread
+WAITING FOR TRAIN SCHEDULE TO BE SET :  gi-thread
+SETTING TRAIN SCHEDULE
+BOOKING THE TICKET USING MAKE MY TRIP
+BOOKING THE TICKET USING GO IBIBO
+
+SYNCHRONIZATION
+----------------------
+	in multi-threading multiple threads operates a multiple or single function or 		method at same time.
+	if multiple-threads operates on same function or method then there will always be 	the chance of inconsistant execution of code.
+
+Lock
+	can work with non-recursive functions or method only and allows only a single 	thread to work on a method or function at a time.
+
+import threading as th
+lock = th.Lock()
+def demo(n):
+	print('ACQUIRING THE LOCK')
+	lock.acquire()
+	for x in range(1,11):
+		print(n*x)
+	print('RELEASING THE LOCK.')
+	lock.release()
+
+t1 = th.Thread(
+	target = demo,
+	args = (10,)
+)
+t2 = th.Thread(
+	target = demo,
+	args = (13,)
+)
+t3 = th.Thread(
+	target = demo,
+	args = (17,)
+)
+t1.start()
+t2.start()
+t3.start()
+
+RLock - Reenant Lock
+	same as lock but it can work with recusive functions
+
+import threading as th
+lock = th.RLock()
+
+def demo(n,i = 1):
+	print('acquiring the lock')
+	lock.acquire()
+	print(n*i)
+	if i < 10:
+		demo(n,i+1)
+	lock.release()
+	print('releasing the lock.')	
+
+t1 = th.Thread(
+	target = demo,
+	args = (10,)
+)
+t2 = th.Thread(
+	target = demo,
+	args = (13,)
+)
+t3 = th.Thread(
+	target = demo,
+	args = (17,)
+)
+t1.start()
+t2.start()
+t3.start()
+
+Semphore(counter = 1)
+	same as lock but number of threads to be allowed at a time is decided by you .
+
+import threading as th
+lock = th.Semaphore(2)
+def demo(n):
+	print('ACQUIRING THE LOCK')
+	lock.acquire()
+	for x in range(1,11):
+		print(n*x)
+	print('RELEASING THE LOCK.')
+	lock.release()
+
+t1 = th.Thread(
+	target = demo,
+	args = (10,)
+)
+t2 = th.Thread(
+	target = demo,
+	args = (13,)
+)
+t3 = th.Thread(
+	target = demo,
+	args = (17,)
+)
+t1.start()
+t2.start()
+t3.start()
+
+BoundedSemaphore
+	same as rlock but the number of threads allowed at a time is decided by you.
+
+all the above listed classes defines the following methods into them.
+
+obj.acquire()
+	acquires the lock 
+obj.release()
+	releases the lock acquired by thread
+
+
+Dead Lock
+	when a thread waits for a lock that is never gonna be released.
+
+
+
+
