@@ -1,0 +1,60 @@
+<EmailComposer>:
+	orientation:'vertical'
+	padding:10
+	spacing:10
+	
+	to_email:to_email
+	from_email:from_email
+	matter:matter
+	pswrd:pswrd
+	status:status
+	
+	id:obj
+	
+	Label:
+		text:'PYTHON EMAIL COMPOSER'
+		font_size:50
+		size_hint:1,0.25
+	BoxLayout:
+		size_hint:1,0.20
+		TextInput:
+			text:'From Email'
+			id:from_email
+			font_size:20
+	
+		TextInput:
+			text:'To Email'
+			id:to_email
+			font_size:20
+	TextInput:
+		password:True
+		text:'Enter Password...'
+		id:pswrd
+		size_hint:1,0.20
+	
+	TextInput:
+		text:"Enter Msg Here..."
+		id:matter
+		font_size:15
+		multiline:True
+	
+	BoxLayout:
+		spacing:10
+		padding:10
+		size_hint:1,0.25
+		Button:
+			text:"[b]SEND[/b]"
+			markup:True
+			on_release:obj.sendbythread(from_email.text,to_email.text,pswrd.text,matter.text)
+		Button:
+			text:"[b]RESET[/b]"
+			markup:True
+			on_release:
+				matter.text = "Enter Msg Here..."
+				from_email.text = "From Email"
+				to_email.text = "To Email"
+	Label:
+		id:status
+		size_hint:1,0.1
+		text:'PROGRESS WILL BE DIPLAYED HERE'
+		

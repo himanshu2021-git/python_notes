@@ -1,0 +1,85 @@
+<EmailComposer>:
+	to_email:to_email
+	from_email:from_email
+	matter:matter
+	pswrd:pswrd
+	status:status
+		
+	id:obj
+	BoxLayout:
+		orientation:'vertical'
+		padding:10
+		spacing:10
+		
+		Label:
+			text:'PYTHON EMAIL COMPOSER'
+			font_size:50
+			size_hint:1,0.25
+		BoxLayout:
+			size_hint:1,0.20
+			TextInput:
+				text:'From Email'
+				id:from_email
+				font_size:20
+		
+			TextInput:
+				text:'To Email'
+				id:to_email
+				font_size:20
+		BoxLayout:
+			size_hint:1,0.20
+			spacing:10
+			TextInput:
+				password:True
+				text:'Enter Password...'
+				id:pswrd
+				size_hint:0.8,1
+			Button:
+				text:'Choose File'
+				size_hint:0.2,1
+				on_release:app.root.current = "file"
+		
+		TextInput:
+			text:"Enter Msg Here..."
+			id:matter
+			font_size:15
+			multiline:True
+		
+		BoxLayout:
+			spacing:10
+			padding:10
+			size_hint:1,0.25
+			Button:
+				text:"[b]SEND[/b]"
+				markup:True
+				on_release:obj.sendbythread(from_email.text,to_email.text,pswrd.text,matter.text)
+			Button:
+				text:"[b]RESET[/b]"
+				markup:True
+				on_release:
+					matter.text = "Enter Msg Here..."
+					from_email.text = "From Email"
+					to_email.text = "To Email"
+		Label:
+			id:status
+			size_hint:1,0.1
+			text:'PROGRESS WILL BE DIPLAYED HERE'
+<FileChoose>:
+	choosen_file:choosen_file
+	id:obj
+	BoxLayout:
+		orientation:'vertical'
+		padding:10
+		spacing:10
+		Label:
+			text:"PLEASE CHOOSE THE FILE TO ATTACH"
+			font_size:20
+			size_hint:1,0.1
+		FileChooserIconView:
+			id:choosen_file
+			show_hidden: True
+			size_hint:1,0.8
+		Button:
+			text:'ATTACH'
+			on_release:obj.find()
+			size_hint:1,0.1

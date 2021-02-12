@@ -1,0 +1,9 @@
+DATA SCIENCE----data is meaningless...no logical meaning
+job resposiblities--- get insights of huge data and use them for solving business problems.
+example-datascientist has A GOOD HABIT OF ASKING WHY?
+question--why we dont automate-if we have to do this same thing again and again to remove repeated tasks(we use machine learninng for that)
+jupyter-julia,python and r language.
+anaconda is a collection of various IDs.
+we never deploy projects in jupyter
+
+if want to perform any dos command on juopyter then usE as !pip install numpy

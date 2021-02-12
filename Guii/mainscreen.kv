@@ -1,0 +1,45 @@
+<EmailComposer>:
+	orientation:"vertical"
+	padding:10
+	spacing:10
+	
+	to_email:to_email
+	from_email:from_email
+	matter:matter
+
+	Label:
+		text:"Python Email Composer"
+		font_size:50
+		size_hint:1,0.20
+	TextInput:
+		text:"From Email"
+		id:from_email
+		font_size:30
+		size_hint:1,0.15 #width.height
+	
+	TextInput:
+		text:"To Email"
+		id:to_email
+		font_size:30
+		size_hint:1,0.15
+
+	TextInput:
+		text:"Enter message here"
+		id:matter
+		font_size:15
+		multiline:True
+	BoxLayout:
+		spacing:10
+		padding:10
+		size_hint:1,0.25
+
+		Button:
+			text:"[b]SEND[/b]"
+			markup:True
+		Button:
+			text:"[b]RESET[/b]"
+			markup:True
+			on_release:
+				matter.text="Enter message here.."
+				from_email.text="From Email"
+				to_email.text="To Email"

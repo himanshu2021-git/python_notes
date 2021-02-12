@@ -1,0 +1,19 @@
+Kivy-------------------
+
+#creating the label
+import stuff(app,label) from kivy
+from kivy.app import App
+from kivy.uix.label  
+lbl=Label(
+	text="Hello world",
+	font_size=50,
+	color=(0.60,0.50,0.20,0.50)
+)
+#creating the window
+
+class MyMain(App):
+	def build(self):
+		return lbl
+
+if __name__="__main__":
+	MyMain().run() #started the lifecycle of Kivy's Screen

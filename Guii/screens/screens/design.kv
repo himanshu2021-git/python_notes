@@ -1,0 +1,66 @@
+<Screen1>:
+	BoxLayout:
+		orientation:'vertical'
+		padding:10
+		spacing:10
+		Label:
+			text:"THIS IS [b]SCREEN 1[/b]"
+			markup:True
+			font_size:50
+			size_hint:1,0.8
+		GridLayout:
+			size_hint:1,0.2
+			cols:2
+			Button:
+				text:'Prev.'
+				on_press:self.text="No Previous Screen Available"
+			Button:
+				text:'Next'
+				on_release:
+					root.manager.transition.direction = 'down'
+					app.root.current="sc2"
+	
+<Screen2>:
+	BoxLayout:
+		orientation:'vertical'
+		padding:10
+		spacing:10
+		Label:
+			text:"THIS IS [b]SCREEN 2[/b]"
+			markup:True
+			font_size:50
+			size_hint:1,0.8
+		GridLayout:
+			size_hint:1,0.2
+			cols:2
+			Button:
+				text:'Prev.'
+				on_press:
+					root.manager.transition.direction = 'up'
+					app.root.current="sc1"
+			Button:
+				text:'Next'
+				on_release:
+					root.manager.transition.direction = 'down'
+					app.root.current="sc3"
+<Screen3>:
+	BoxLayout:
+		orientation:'vertical'
+		padding:10
+		spacing:10
+		Label:
+			text:"THIS IS [b]SCREEN 3[/b]"
+			markup:True
+			font_size:50
+			size_hint:1,0.8
+		GridLayout:
+			size_hint:1,0.2
+			cols:2
+			Button:
+				text:'Prev.'
+				on_press:
+					root.manager.transition.direction = 'up'
+					app.root.current="sc2"
+			Button:
+				text:'Next'
+				on_release:self.text = "No Next Screen Available"
